@@ -1,0 +1,28 @@
+# --- Python ---
+.venv/
+__pycache__/
+*.pyc
+_dashboard_fixed.py
+
+# --- Данные (сырые Excel не публикуем; в репо только сгенерированный JSON) ---
+*.xlsx
+
+# --- Node / фронтенд ---
+web/node_modules/
+web/dist/
+*.tsbuildinfo
+# скомпилированный tsc-ом конфиг (артефакт сборки)
+web/vite.config.js
+web/vite.config.d.ts
+
+# --- Локальные настройки Claude Code (машинно-зависимые) ---
+.claude/
+
+# --- IDE / система ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Временное ---
+scratch_*.json

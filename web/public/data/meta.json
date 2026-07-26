@@ -1,0 +1,1626 @@
+{
+ "episodes": [
+  {
+   "episode": "Итоги 2024 года",
+   "short": "Итоги 2024",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "02:49:32",
+   "category": "Сводный",
+   "release_date": "2024-12-31",
+   "ref_release_date": "2024-12-30"
+  },
+  {
+   "episode": "Dragon Age: the Veilguard / Horizon: Zero Dawn Remastered / Warhammer 40K: Space Marine 2 / Bloomtown / The Legend of Vox Machina 3",
+   "short": "Игры 2024 (DA, Horizon, WH, Vox)",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "02:45:05",
+   "category": "Сводный",
+   "release_date": "2024-11-13",
+   "ref_release_date": "2024-11-11"
+  },
+  {
+   "episode": "Arcane / Rue Valley / Пингвин / Call of Duty: Black Ops 6 / Дюна: Пророчество / Lego Horizon Adventures",
+   "short": "Arcane, Rue, Пингвин, CoD, Дюна",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:56:25",
+   "category": "Сводный",
+   "release_date": "2024-11-29",
+   "ref_release_date": "2024-11-28"
+  },
+  {
+   "episode": "Silo / Тихое место / Hogwarts: Legacy / Гарри Поттер / Дикий Робот / Гладиатор 2 / The Last of Us: Part II / Baldur&#39;s Gate III / Медведь / Мамонты / Dead Space 3",
+   "short": "Silo / Тихое место / Hogwarts: Legacy / Гарри Поттер / Дикий Робот / Гладиатор 2 / The Last of Us: Part II / Baldur&#39;s Gate III / Медведь / Мамонты / Dead Space 3",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:42:53",
+   "category": "Сводный",
+   "release_date": "2025-01-20",
+   "ref_release_date": "2025-01-20"
+  },
+  {
+   "episode": "Игра в кальмара 2 / РПГ про вампиров от авторов Ведьмак 3 и Cyberpunk 2077 / Star Wars: Skeleton Crew с Джудом Лоу",
+   "short": "Кальмара 2, Вампиры CDPR, Skeleton Crew",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:52:37",
+   "category": "Сводный",
+   "release_date": "2025-01-27",
+   "ref_release_date": "2025-01-27"
+  },
+  {
+   "episode": "«Разделение» / «Темная материя» / финал 2 сезона «Укрытие» / Eternal strands от автора Dragon Age",
+   "short": "Разделение, Темная материя, Укрытие S2, Eternal Strands",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:15:53",
+   "category": "Сводный",
+   "release_date": "2025-02-03",
+   "ref_release_date": "2025-02-03"
+  },
+  {
+   "episode": "«Kingdom Come: Deliverance 2» / «Ваш дружелюбный сосед Человек-паук» / «Do No Harm» - «Papers, Please» про доктора",
+   "short": "KCD2, Человек-паук, Do No Harm",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:17:21",
+   "category": "Сводный",
+   "release_date": "2025-02-10",
+   "ref_release_date": "2025-02-10"
+  },
+  {
+   "episode": "«Извне» - сериал от создателей «LOST» / мультсериал «Неуязвимый» - 3 сезон / сериал «Шершни» / презентация State of Play",
+   "short": "Извне, Неуязвимый S3, Шершни, State of Play",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:55:49",
+   "category": "Сводный",
+   "release_date": "2025-02-17",
+   "ref_release_date": "2025-02-17"
+  },
+  {
+   "episode": "«Avowed» – новая RPG от Obsidian / Юра Борисов в фильме «Пророк. История Александра Пушкина» / «Еретик» - психологический триллер",
+   "short": "Avowed, Пророк, Еретик",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:41:20",
+   "category": "Сводный",
+   "release_date": "2025-02-24",
+   "ref_release_date": "2025-02-24"
+  },
+  {
+   "episode": "«Ущелье» / сериал «Джек Ричер» - 3 сезон / игра-антиутопия - «Beholder: Conductor»",
+   "short": "Ущелье, Джек Ричер S3, Beholder Conductor",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:54:07",
+   "category": "Сводный",
+   "release_date": "2025-03-03",
+   "ref_release_date": "2025-03-03"
+  },
+  {
+   "episode": "«Split Fiction» - новый хит от создателей «It Takes Two» / сериал «Сорвиголова: Рожденный заново» / премия «Оскар»",
+   "short": "Split Fiction, Сорвиголова, Оскар",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:58:00",
+   "category": "Сводный",
+   "release_date": "2025-03-10",
+   "ref_release_date": "2025-03-10"
+  },
+  {
+   "episode": "Фильм «Рейс на вылет» / сериал «Новичок» /«Монстры-коммандос» - мультсериал от DC Studios",
+   "short": "Рейс на вылет, Новичок, Монстры-коммандос",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:45:04",
+   "category": "Сводный",
+   "release_date": "2025-03-17",
+   "ref_release_date": "2025-03-17"
+  },
+  {
+   "episode": "Фильм «Новокаин» / сериал «Переходный возраст» от Netflix / демо «The Black Ice» и «Static Dread»",
+   "short": "Новокаин, Переходный возраст, Black Ice / Static Dread",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:14:55",
+   "category": "Сводный",
+   "release_date": "2025-03-25",
+   "ref_release_date": "2025-03-24"
+  },
+  {
+   "episode": "Фильм Микки 17 / сериал «День Шакала» / «Киностудия» - комедийный сериал от Apple TV / «Hell Clock» - игра в духе «Hades» и «Diablo»",
+   "short": "Микки 17, День Шакала, Киностудия, Hell Clock",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:59:39",
+   "category": "Сводный",
+   "release_date": "2025-03-31",
+   "ref_release_date": "2025-03-31"
+  },
+  {
+   "episode": "Фильм «Мастер» / сериал «Гангстерленд» / «Atomfall» - английский «Fallout» / игра «Siberian Way» / текстовая RPG - «Herald of the Mists»",
+   "short": "Мастер, Гангстерленд, Atomfall, Siberian Way, Herald of the Mists",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:23:05",
+   "category": "Сводный",
+   "release_date": "2025-04-07",
+   "ref_release_date": "2025-04-07"
+  },
+  {
+   "episode": "«Minecraft в кино» / «Разделение» - финал 2 сезона / «They Are Here» - хоррор про инопланетян / «Tainted Grail: The Fall of Avalon» - RPG по мотивам легенд об Короле Артуре",
+   "short": "Minecraft, Разделение S2, They Are Here, Tainted Grail",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:06:45",
+   "category": "Сводный",
+   "release_date": "2025-04-15",
+   "ref_release_date": "2025-04-14"
+  },
+  {
+   "episode": "«Одни из нас» - впечатления от старта второго сезона / «Под огнем» - полтора часа ада / «Hollywood Animal» - симулятор кинодела / «Boreas» - инди игра про морское путешествие",
+   "short": "TLOU S2, Под огнем, Hollywood Animal, Boreas",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:06:31",
+   "category": "Сводный",
+   "release_date": "2025-04-22",
+   "ref_release_date": "2025-04-21"
+  },
+  {
+   "episode": "«Андор» - возвращение спасителя вселенной «Звездных Войн» / action-RPG «Mandragora: Whispers of the Witch Tree» / визуальная новелла «Pink Noise»",
+   "short": "Андор, Mandragora, Pink Noise",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:05:06",
+   "category": "Сводный",
+   "release_date": "2025-04-28",
+   "ref_release_date": "2025-04-28"
+  },
+  {
+   "episode": "Clair Obscur: Expedition 33 - яркое JRPG приключение, вдохновленное серий игр «Final Fantasy» от выходцев из Ubisoft / «Опустошение» - боевик от Netflix c Томом Харди",
+   "short": "Expedition 33, Опустошение",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:05:36",
+   "category": "Сводный",
+   "release_date": "2025-05-06",
+   "ref_release_date": "2025-05-05"
+  },
+  {
+   "episode": "Аутсорс / фолк-хоррор Лихо Одноглазое / Kanun 1919 - дизельпанк приключение / ФИЛЬМОСКОП УЖАСОВ: Зеленые Глаза - игра про советские страшилки",
+   "short": "Аутсорс, Лихо, Kanun 1919, Зеленые Глаза",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:07:30",
+   "category": "Сводный",
+   "release_date": "2025-05-12",
+   "ref_release_date": "2025-05-12"
+  },
+  {
+   "episode": "DOOM: The Dark Ages / Громовержцы* - последний фильм пятой фазы MCU / Киллербот - сайфай-сериал про робота мизантропа от Apple TV",
+   "short": "DOOM Dark Ages, Громовержцы, Киллербот",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:20:54",
+   "category": "Сводный",
+   "release_date": "2025-05-19",
+   "ref_release_date": "2025-05-18"
+  },
+  {
+   "episode": "Любовь, смерть и роботы - 4 сезон / Расплата 2 - продолжение боевика с Беном Аффлеком / One way home - атмосферный платформер в духе Little Nightmares",
+   "short": "ЛСР S4, Расплата 2, One Way Home",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:09:34",
+   "category": "Сводный",
+   "release_date": "2025-05-26",
+   "ref_release_date": "2025-05-25"
+  },
+  {
+   "episode": "Источник вечной молодости - Индиана Джонс от Гая Ричи / Ферма Кларксона - 4 сезон шоу со звездой Top Gear / Scottside - нелинейная новелла с вайбом «Очень странные дела»",
+   "short": "Индиана Джонс, Ферма Кларксона S4, Scottside",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:18:40",
+   "category": "Сводный",
+   "release_date": "2025-06-03",
+   "ref_release_date": "2025-06-01"
+  },
+  {
+   "episode": "Лило и Стич - ремейк от Disney / Миссия невыполнима: Финальная расплата / Фишер: Затмение - продолжение нашумевшего сериала",
+   "short": "Лило и Стич, Миссия невыполнима, Фишер",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:24:13",
+   "category": "Сводный",
+   "release_date": "2025-06-10",
+   "ref_release_date": "2025-06-08"
+  },
+  {
+   "episode": "Балерина - зрелищный спин-офф Джона Уика / анимационный фильм - Хищник: Убийца убийц / Sister Ray - 2D RPG в духе игры «Disco Elysium» и фильма «На игле»",
+   "short": "Балерина, Хищник, Sister Ray",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:13:37",
+   "category": "Сводный",
+   "release_date": "2025-06-17",
+   "ref_release_date": "2025-06-15"
+  },
+  {
+   "episode": "«Как приручить дракона» / action MMORPG - «PIONER» / инди-хоррор «No, I’m not a Human» из сборника «Violent Horror Stories: anthology»",
+   "short": "Как приручить дракона, PIONER, No I’m not a Human",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:18:41",
+   "category": "Сводный",
+   "release_date": "2025-06-24",
+   "ref_release_date": "2025-06-22"
+  },
+  {
+   "episode": "The Alters - sci-fi survival от авторов «This War of Mine» и дилогии «Frostpunk» / Под прикрытием - криминальная комедия от Amazon / Последний отсчет - сериал со звездой «Пацанов»",
+   "short": "The Alters, Под прикрытием, Последний отсчет",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:59:59",
+   "category": "Сводный",
+   "release_date": "2025-06-30",
+   "ref_release_date": "2025-06-29"
+  },
+  {
+   "episode": "«Игра в кальмара» 3 сезон - финал / «28 лет спустя» - возвращение постапокалиптического хоррора и обсуждение франшизы",
+   "short": "Кальмара S3, 28 лет спустя",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:24:22",
+   "category": "Сводный",
+   "release_date": "2025-07-08",
+   "ref_release_date": "2025-07-06"
+  },
+  {
+   "episode": "«Формула-1» с Брэдом Питтом / бадди-муви «Главы государств» от Amazon / сериал «Медведь» 4 сезон",
+   "short": "Формула-1, Главы государств, Медведь S4",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "00:58:36",
+   "category": "Сводный",
+   "release_date": "2025-07-15",
+   "ref_release_date": "2025-07-13"
+  },
+  {
+   "episode": "«Мир Юрского периода: Возрождение» - возвращение культовой франшизы / «Институт» - мрачный триллер по книге Стивена Кинга",
+   "short": "Мир Юрского периода, Институт",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:12:13",
+   "category": "Сводный",
+   "release_date": "2025-07-22",
+   "ref_release_date": "2025-07-20"
+  },
+  {
+   "episode": "«Супермен» - начало новой Вселенной DC / «Черная птица» - сериал тру-крайм от Apple TV / «The King is Watching» - нашумевшая роглайт-стратегия",
+   "short": "Супермен, Черная птица, The King is Watching",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:13:44",
+   "category": "Сводный",
+   "release_date": "2025-07-28",
+   "ref_release_date": "2025-07-27"
+  },
+  {
+   "episode": "Спецвыпуск! Разговор с разработчиками инди-студии Terrabyte Games об их проекте «Run away from me: Alexandra»",
+   "short": "Terrabyte Games / Run away from me",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:53:14",
+   "category": "Сводный",
+   "release_date": "2025-08-04",
+   "ref_release_date": "2025-08-03"
+  },
+  {
+   "episode": "«Фантастическая четверка: первые шаги» - перезапуск истории о семье супергероев / сериал «Железное сердце» / «Лихо одноглазое» - фолк хоррор от студии Morteshka",
+   "short": "Фантастическая четверка, Железное сердце, Лихо",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:18:59",
+   "category": "Сводный",
+   "release_date": "2025-08-11",
+   "ref_release_date": "2025-08-10"
+  },
+  {
+   "episode": "«Уэнсдей» 2 сезон / Mafia: The old country - возвращение гангстерской саги / «Чужой: Земля» - первый сериал во франшизе",
+   "short": "Уэнсдей S2, Mafia, Чужой Земля",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:55:56",
+   "category": "Сводный",
+   "release_date": "2025-08-18",
+   "ref_release_date": "2025-08-17"
+  },
+  {
+   "episode": "«Никто 2» - сиквел боевика со звездой «Во все тяжкие» / Gamescom 2025 / Sword of the Sea - инди-игра от создателей Journey",
+   "short": "Никто 2, Gamescom 2025, Sword of the Sea",
+   "format": "Старый",
+   "genre": "Сводный",
+   "duration": "01:18:29",
+   "category": "Сводный",
+   "release_date": "2025-08-25",
+   "ref_release_date": "2025-08-25"
+  },
+  {
+   "episode": "Миротворец 2 сезон: кровь, бухло, альтернативная реальность",
+   "short": "Миротворец S2",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:26:27",
+   "category": "Экшен",
+   "release_date": "2025-09-01",
+   "ref_release_date": "2025-09-01"
+  },
+  {
+   "episode": "Gears of War: Reloaded - новый ремастер брутального боевика от Epic Games теперь и на PS5",
+   "short": "Gears of War Reloaded",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:31:47",
+   "category": "Шутер",
+   "release_date": "2025-09-04",
+   "ref_release_date": "2025-09-04"
+  },
+  {
+   "episode": "«Голый пистолет» - продолжение культовой комедии на грани ремейка",
+   "short": "Голый пистолет",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:27:44",
+   "category": "Комедия",
+   "release_date": "2025-09-08",
+   "ref_release_date": "2025-09-08"
+  },
+  {
+   "episode": "Cronos: The New Dawn - новый хоррор от авторов ремейка Silent Hill 2",
+   "short": "Cronos The New Dawn",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:33:29",
+   "category": "Хоррор",
+   "release_date": "2025-09-11",
+   "ref_release_date": "2025-09-11"
+  },
+  {
+   "episode": "Hollow Knight: Silksong - возвращение инди-хита, боли, ненависти, восторга",
+   "short": "Hollow Knight Silksong",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:35:05",
+   "category": "Платформер",
+   "release_date": "2025-09-15",
+   "ref_release_date": "2025-09-15"
+  },
+  {
+   "episode": "«Уэнсдэй» - финал второго сезона истории семьи Аддамс",
+   "short": "Уэнсдэй S2 финал",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:33:20",
+   "category": "Фэнтези",
+   "release_date": "2025-09-18",
+   "ref_release_date": "2025-09-17"
+  },
+  {
+   "episode": "«Газета» - каким получился спин-офф культового «Офиса»",
+   "short": "Газета",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:27:18",
+   "category": "Комедия",
+   "release_date": "2025-09-20",
+   "ref_release_date": "2025-09-19"
+  },
+  {
+   "episode": "No, I’m not a Human - отечественный хоррор от инди-студии Trioskaz",
+   "short": "No I’m not a Human (Trioskaz)",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:27:38",
+   "category": "Хоррор",
+   "release_date": "2025-09-22",
+   "ref_release_date": "2025-09-22"
+  },
+  {
+   "episode": "Borderlands 4 - веселье, пушки, психи и много багов",
+   "short": "Borderlands 4",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:40:03",
+   "category": "Шутер",
+   "release_date": "2025-09-25",
+   "ref_release_date": "2025-09-24"
+  },
+  {
+   "episode": "«Орудия» - самый обсуждаемый хоррор от автора «Варвара»",
+   "short": "Орудия",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:33:06",
+   "category": "Хоррор",
+   "release_date": "2025-09-26",
+   "ref_release_date": "2025-09-26"
+  },
+  {
+   "episode": "Dying Light: The Beast - возвращение зомби-экшена к истокам серии",
+   "short": "Dying Light Beast",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:49:30",
+   "category": "Экшен",
+   "release_date": "2025-09-29",
+   "ref_release_date": "2025-09-29"
+  },
+  {
+   "episode": "Поколение «Ви» 2 сезон - дерзкий разогрев перед финалом «Пацанов»",
+   "short": "Поколение Ви S2",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:34:55",
+   "category": "Фантастика",
+   "release_date": "2025-10-01",
+   "ref_release_date": "2025-10-01"
+  },
+  {
+   "episode": "«Зомби Marvel» - спин-офф анимационной антологии «Что, если…?» с рейтингом R",
+   "short": "Зомби Marvel",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:29:22",
+   "category": "Ужасы",
+   "release_date": "2025-10-03",
+   "ref_release_date": "2025-10-03"
+  },
+  {
+   "episode": "«Дом Гиннесса» - история о великой пивной империи от создателя сериала «Острые козырьки»",
+   "short": "Дом Гиннесса",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:39:34",
+   "category": "Драма",
+   "release_date": "2025-10-07",
+   "ref_release_date": "2025-10-06"
+  },
+  {
+   "episode": "«Долгая прогулка» - экранизация жесткой антиутопии Стивена Кинга от режиссера «Голодных игр»",
+   "short": "Долгая прогулка",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:26:13",
+   "category": "Триллер",
+   "release_date": "2025-10-09",
+   "ref_release_date": "2025-10-08"
+  },
+  {
+   "episode": "Silent Hill f - японские кошмары в новой главе культового хоррора",
+   "short": "Silent Hill f",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:27:32",
+   "category": "Хоррор",
+   "release_date": "2025-10-10",
+   "ref_release_date": "2025-10-10"
+  },
+  {
+   "episode": "Ghost of Yotei - сиквел самурайского экшена «Призрак Цусимы» от Sucker Punch",
+   "short": "Ghost of Yotei",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:40:25",
+   "category": "Экшен",
+   "release_date": "2025-10-14",
+   "ref_release_date": "2025-10-13"
+  },
+  {
+   "episode": "«Ацтекский Бэтмен: Столкновение империй» - легенда Темного рыцаря в эпоху ацтекской цивилизации",
+   "short": "Ацтекский Бэтмен",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:30:59",
+   "category": "Фэнтези",
+   "release_date": "2025-10-16",
+   "ref_release_date": "2025-10-15"
+  },
+  {
+   "episode": "«Пойман с поличным» - кот, хасиды и два русских гопника в криминальной драме Дарена Аронофски",
+   "short": "Пойман с поличным",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:27:48",
+   "category": "Криминал",
+   "release_date": "2025-10-17",
+   "ref_release_date": "2025-10-17"
+  },
+  {
+   "episode": "Little Nightmares 3 - кошмар на двоих от авторов интерактивного хоррора Until Dawn",
+   "short": "Little Nightmares 3",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:32:51",
+   "category": "Хоррор",
+   "release_date": "2025-10-20",
+   "ref_release_date": "2025-10-20"
+  },
+  {
+   "episode": "«Битва за битвой» - скуф-революционер ДиКаприо в главной экшн-сатире года",
+   "short": "Битва за битвой",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:36:43",
+   "category": "Экшен",
+   "release_date": "2025-10-23",
+   "ref_release_date": "2025-10-22"
+  },
+  {
+   "episode": "«Код 3» - неожиданно сильное драмеди со звездой сериала «Офис»",
+   "short": "Код 3",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:29:45",
+   "category": "Драма",
+   "release_date": "2025-10-24",
+   "ref_release_date": "2025-10-24"
+  },
+  {
+   "episode": "Бар «Один звонок» - Данила Козловский в мистическом сериале о разговорах с мертвыми",
+   "short": "Бар Один звонок",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:26:51",
+   "category": "Мистика",
+   "release_date": "2025-10-28",
+   "ref_release_date": "2025-10-27"
+  },
+  {
+   "episode": "«Трон: Арес» - Джаред Лето пытается спасти культовую франшизу",
+   "short": "Трон Арес",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:20:28",
+   "category": "Фантастика",
+   "release_date": "2025-10-29",
+   "ref_release_date": "2025-10-29"
+  },
+  {
+   "episode": "Vampire The Masquerade - Bloodlines 2 - сиквел лучшей игры про вампиров, который не смог",
+   "short": "VtM Bloodlines 2",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:52:42",
+   "category": "RPG",
+   "release_date": "2025-11-01",
+   "ref_release_date": "2025-10-31"
+  },
+  {
+   "episode": "«Оно: Добро пожаловать в Дерри» - возвращение клоуна Пеннивайза в формате хоррор-сериала от HBO",
+   "short": "Оно Дерри",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:30:49",
+   "category": "Ужасы",
+   "release_date": "2025-11-04",
+   "ref_release_date": "2025-11-03"
+  },
+  {
+   "episode": "Dispatch - новый хит про супергероев от ветеранов Telltale Games",
+   "short": "Dispatch",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:40:59",
+   "category": "Приключение",
+   "release_date": "2025-11-06",
+   "ref_release_date": "2025-11-05"
+  },
+  {
+   "episode": "The Outer Worlds 2 - космический Fallout New Vegas от Obsidian",
+   "short": "The Outer Worlds 2",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:35:53",
+   "category": "RPG",
+   "release_date": "2025-11-08",
+   "ref_release_date": "2025-11-07"
+  },
+  {
+   "episode": "Нам один год! История создания подкаста и ответы на вопросы подписчиков.",
+   "short": "Подкасту 1 год",
+   "format": "Новый",
+   "genre": "Личный",
+   "duration": "01:51:08",
+   "category": "Спецвыпуск",
+   "release_date": "2025-11-11",
+   "ref_release_date": "2025-11-10"
+  },
+  {
+   "episode": "«Ведьмак» 4 сезон - обновленный Геральт в продолжении фэнтезийной саги от Netflix",
+   "short": "Ведьмак S4",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:46:24",
+   "category": "Фэнтези",
+   "release_date": "2025-11-13",
+   "ref_release_date": "2025-11-12"
+  },
+  {
+   "episode": "«Глазами пса» - инди-хоррор о хорошем мальчике Инди",
+   "short": "Глазами пса",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:25:10",
+   "category": "Хоррор",
+   "release_date": "2025-11-15",
+   "ref_release_date": "2025-11-14"
+  },
+  {
+   "episode": "«Из многих» - новый сериал создателя «Во все тяжкие» и «Лучше звоните Солу»",
+   "short": "Из многих",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:29:56",
+   "category": "Драма",
+   "release_date": "2025-11-18",
+   "ref_release_date": "2025-11-17"
+  },
+  {
+   "episode": "«Черный кролик» - криминальный сериал про непутевых братьев с Джудом Лоу",
+   "short": "Черный кролик",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:40:09",
+   "category": "Криминал",
+   "release_date": "2025-11-19",
+   "ref_release_date": "2025-11-19"
+  },
+  {
+   "episode": "Rue Valley - наследник Disco Elysium про попадание во временную петлю",
+   "short": "Rue Valley",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:26:53",
+   "category": "RPG",
+   "release_date": "2025-11-22",
+   "ref_release_date": "2025-11-21"
+  },
+  {
+   "episode": "«Иллюзия обмана 3» - возвращение фокусников-авантюристов спустя 9 лет",
+   "short": "Иллюзия обмана 3",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:22:41",
+   "category": "Триллер",
+   "release_date": "2025-11-24",
+   "ref_release_date": "2025-11-24"
+  },
+  {
+   "episode": "«Могучая девятка» - анимационный сериал от создателей «Легенды о Vox Machina»",
+   "short": "Могучая девятка",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:31:00",
+   "category": "Фэнтези",
+   "release_date": "2025-11-26",
+   "ref_release_date": "2025-11-26"
+  },
+  {
+   "episode": "«Хищник: Планета смерти» - сказка о семье и принятии себя",
+   "short": "Хищник Планета смерти",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:29:20",
+   "category": "Комедия",
+   "release_date": "2025-11-29",
+   "ref_release_date": "2025-11-28"
+  },
+  {
+   "episode": "«Очень странные дела» 5 сезон - впечатления от возвращения главного сериала Netflix",
+   "short": "ОСД S5",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:55:05",
+   "category": "Фантастика",
+   "release_date": "2025-12-01",
+   "ref_release_date": "2025-12-01"
+  },
+  {
+   "episode": "Call of Duty: Black Ops 7 / Winter Burrow - ААА-боевик против маленькой уютной инди-игры",
+   "short": "CoD BO7 / Winter Burrow",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:22:52",
+   "category": "Шутер",
+   "release_date": "2025-12-04",
+   "ref_release_date": "2025-12-03"
+  },
+  {
+   "episode": "«Икусагами: Последний самурай» - королевская битва эпохи Мэйдзи в духе «Игры в кальмара»",
+   "short": "Икусагами",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:34:43",
+   "category": "Экшен",
+   "release_date": "2025-12-05",
+   "ref_release_date": "2025-12-04"
+  },
+  {
+   "episode": "«Метод» 3 сезон - продолжение детективного триллера с Хабенским и Кологривым",
+   "short": "Метод S3",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:36:00",
+   "category": "Триллер",
+   "release_date": "2025-12-05",
+   "ref_release_date": "2025-12-05"
+  },
+  {
+   "episode": "«Кибердеревня» 2 сезон - продолжение sci-fi сатиры о приключениях фермера и робота",
+   "short": "Кибердеревня S2",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:32:57",
+   "category": "Фантастика",
+   "release_date": "2025-12-08",
+   "ref_release_date": "2025-12-08"
+  },
+  {
+   "episode": "«Баллада о маленьком игроке» - притча о вреде лудомании и одиночестве с Колином Фарреллом",
+   "short": "Баллада о маленьком игроке",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:31:15",
+   "category": "Драма",
+   "release_date": "2025-12-13",
+   "ref_release_date": "2025-12-12"
+  },
+  {
+   "episode": "Зверополис 2 - сиквел анимационного бадди-муви от Disney, дважды ставшим кассовым хитом",
+   "short": "Зверополис 2",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:26:39",
+   "category": "Комедия",
+   "release_date": "2025-12-15",
+   "ref_release_date": "2025-12-15"
+  },
+  {
+   "episode": "«Волчок» - приключенческое кино с Евгением Ткачуком в сеттинге Российской империи",
+   "short": "Волчок",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:28:31",
+   "category": "Приключение",
+   "release_date": "2025-12-17",
+   "ref_release_date": "2025-12-17"
+  },
+  {
+   "episode": "«Метод исключения» - черная комедия о безысходности от автора Олдбоя",
+   "short": "Метод исключения",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:24:13",
+   "category": "Комедия",
+   "release_date": "2025-12-20",
+   "ref_release_date": "2025-12-19"
+  },
+  {
+   "episode": "Fallout 2 сезон - возвращение ядерного приключения в Пустоши",
+   "short": "Fallout S2",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:25:35",
+   "category": "Фантастика",
+   "release_date": "2025-12-22",
+   "ref_release_date": "2025-12-22"
+  },
+  {
+   "episode": "«Достать ножи: Воскрешение покойника» - третье убийство для детектива Бенуа Бланка",
+   "short": "Достать ножи 3",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:32:22",
+   "category": "Детектив",
+   "release_date": "2025-12-25",
+   "ref_release_date": "2025-12-24"
+  },
+  {
+   "episode": "Итоги-2025 года: лучшие фильмы, игры, сериалы",
+   "short": "Итоги 2025",
+   "format": "Новый",
+   "genre": "Личный",
+   "duration": "01:49:41",
+   "category": "Спецвыпуск",
+   "release_date": "2025-12-27",
+   "ref_release_date": "2025-12-26"
+  },
+  {
+   "episode": "Посленовогодний отходняк: как мы перезагрузились на каникулах",
+   "short": "Новогодний отходняк",
+   "format": "Новый",
+   "genre": "Личный",
+   "duration": "00:43:16",
+   "category": "Спецвыпуск",
+   "release_date": "2026-01-13",
+   "ref_release_date": "2026-01-12"
+  },
+  {
+   "episode": "Финал «Очень странных дел»: разбор, эмоции и прощание с Хоукинсом",
+   "short": "ОСД финал",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "01:14:40",
+   "category": "Фантастика",
+   "release_date": "2026-01-14",
+   "ref_release_date": "2026-01-14"
+  },
+  {
+   "episode": "«Киберслав» - анимационный сериал в жанре технофэнтези про Древнюю Русь",
+   "short": "Киберслав",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:22:22",
+   "category": "Фэнтези",
+   "release_date": "2026-01-16",
+   "ref_release_date": "2026-01-16"
+  },
+  {
+   "episode": "«Золотой Глобус 2026»: обсуждение номинантов и победителей",
+   "short": "Золотой Глобус 2026",
+   "format": "Новый",
+   "genre": "Личный",
+   "duration": "00:51:05",
+   "category": "Спецвыпуск",
+   "release_date": "2026-01-19",
+   "ref_release_date": "2026-01-19"
+  },
+  {
+   "episode": "«Горничная»/«Захваченный рейс» 2 сезон: от уборки дома до захвата поезда",
+   "short": "Горничная / Захваченный рейс S2",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:32:35",
+   "category": "Триллер",
+   "release_date": "2026-01-21",
+   "ref_release_date": "2026-01-21"
+  },
+  {
+   "episode": "«Игры Биста» 2 сезон - масштабное реалити-шоу от самого популярного ютубера в мире",
+   "short": "Игры Биста S2",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:24:28",
+   "category": "Реалити-шоу",
+   "release_date": "2026-01-24",
+   "ref_release_date": "2026-01-23"
+  },
+  {
+   "episode": "«Аватар: Пламя и пепел» / «Марти Великолепный»",
+   "short": "Аватар Пламя и пепел / Марти",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:37:31",
+   "category": "Фантастика",
+   "release_date": "2026-01-27",
+   "ref_release_date": "2026-01-26"
+  },
+  {
+   "episode": "«Рыцарь Семи Королевств»: приземленный, но интригующий спин-офф «Игры престолов»",
+   "short": "Рыцарь Семи Королевств",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:18:43",
+   "category": "Фэнтези",
+   "release_date": "2026-01-28",
+   "ref_release_date": "2026-01-28"
+  },
+  {
+   "episode": "«Лакомый кусок» / «Майор Гром: Игра против правил»",
+   "short": "Лакомый кусок / Майор Гром",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:22:01",
+   "category": "Экшен",
+   "release_date": "2026-01-31",
+   "ref_release_date": "2026-01-30"
+  },
+  {
+   "episode": "«28 лет спустя: Храм костей» - жестокое продолжение зомби-хита",
+   "short": "28 лет спустя Храм костей",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:32:20",
+   "category": "Ужасы",
+   "release_date": "2026-02-03",
+   "ref_release_date": "2026-02-02"
+  },
+  {
+   "episode": "«Возвращение в Сайлент Хилл» / «Левша»: что не так с городом в тумане и со стимпанк блокбастером",
+   "short": "Возвращение в SH / Левша",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:29:27",
+   "category": "Хоррор",
+   "release_date": "2026-02-04",
+   "ref_release_date": "2026-02-04"
+  },
+  {
+   "episode": "«Семья в аренду» - одинокий Брендан Фрейзер в драмеди от режиссера сериала «Грызня»",
+   "short": "Семья в аренду",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:20:54",
+   "category": "Комедия",
+   "release_date": "2026-02-07",
+   "ref_release_date": "2026-02-06"
+  },
+  {
+   "episode": "Финал 2 сезона Fallout: каким получилось продолжение адаптации культовой игры?",
+   "short": "Fallout S2 финал",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:36:07",
+   "category": "Фантастика",
+   "release_date": "2026-02-10",
+   "ref_release_date": "2026-02-09"
+  },
+  {
+   "episode": "Cairn - адреналиновый симулятор альпинизма от инди-разработчиков",
+   "short": "Cairn",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:30:01",
+   "category": "Симулятор",
+   "release_date": "2026-02-12",
+   "ref_release_date": "2026-02-11"
+  },
+  {
+   "episode": "«Чудо-человек» - нетипичный супергеройский мини-сериал от Marvel",
+   "short": "Чудо-человек",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:24:43",
+   "category": "Фантастика",
+   "release_date": "2026-02-14",
+   "ref_release_date": "2026-02-13"
+  },
+  {
+   "episode": "Самые ожидаемые фильмы, сериалы, игры 2026 года",
+   "short": "Ожидания 2026",
+   "format": "Новый",
+   "genre": "Личный",
+   "duration": "01:02:28",
+   "category": "Спецвыпуск",
+   "release_date": "2026-02-16",
+   "ref_release_date": "2026-02-16"
+  },
+  {
+   "episode": "«Резервация» - бюджетная антиутопия по роману в духе «Пикника на обочине» братьев Стругацких",
+   "short": "Резервация",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:29:08",
+   "category": "Фантастика",
+   "release_date": "2026-02-19",
+   "ref_release_date": "2026-02-18"
+  },
+  {
+   "episode": "REANIMAL - истинный наследник Little Nightmares",
+   "short": "REANIMAL",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:34:48",
+   "category": "Хоррор",
+   "release_date": "2026-02-24",
+   "ref_release_date": "2026-02-23"
+  },
+  {
+   "episode": "God of War: Sons of Sparta - новый взгляд на франшизу про юность Кратоса",
+   "short": "GoW Sons of Sparta",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:34:54",
+   "category": "Экшен",
+   "release_date": "2026-02-26",
+   "ref_release_date": "2026-02-25"
+  },
+  {
+   "episode": "«Жизнь Чака» - светлая притча о жизни по рассказу Стивена Кинга",
+   "short": "Жизнь Чака",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:33:27",
+   "category": "Драма",
+   "release_date": "2026-02-28",
+   "ref_release_date": "2026-02-27"
+  },
+  {
+   "episode": "«Рыцарь Семи Королевств» - суд над финалом истории сира Дункана и оруженосца Эгга",
+   "short": "Рыцарь Семи Королевств финал",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:32:45",
+   "category": "Фэнтези",
+   "release_date": "2026-03-02",
+   "ref_release_date": "2026-03-02"
+  },
+  {
+   "episode": "«Казнить нельзя помиловать» - триллер Бекмамбетова с Крисом Праттом о пользе и вреде ИИ",
+   "short": "Казнить нельзя помиловать",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:29:02",
+   "category": "Фантастика",
+   "release_date": "2026-03-04",
+   "ref_release_date": "2026-03-04"
+  },
+  {
+   "episode": "«Игры Биста» - почему советуем посмотреть самое масштабное реалити-шоу",
+   "short": "Игры Биста",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:35:53",
+   "category": "Реалити-шоу",
+   "release_date": "2026-03-07",
+   "ref_release_date": "2026-03-06"
+  },
+  {
+   "episode": "Resident Evil Requiem - долгожданная кульминация всей зомби-франшизы Capcom",
+   "short": "RE Requiem",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:56:08",
+   "category": "Хоррор",
+   "release_date": "2026-03-09",
+   "ref_release_date": "2026-03-09"
+  },
+  {
+   "episode": "«Король и Шут: Навсегда» - воссоединение Горшка и Князя в полнометражном фильме",
+   "short": "Король и Шут Навсегда",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:34:18",
+   "category": "Фэнтези",
+   "release_date": "2026-03-12",
+   "ref_release_date": "2026-03-11"
+  },
+  {
+   "episode": "Silent Hill 4: The Room - возвращаемся в 2004 год и обсуждаем самую спорную игру серии",
+   "short": "SH4 The Room",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:43:06",
+   "category": "Хоррор",
+   "release_date": "2026-03-13",
+   "ref_release_date": "2026-03-13"
+  },
+  {
+   "episode": "Pink Noise - психологическая хоррор-новелла с VHS-эстетикой от отечественных разработчиков",
+   "short": "Pink Noise",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:33:09",
+   "category": "Хоррор",
+   "release_date": "2026-03-16",
+   "ref_release_date": "2026-03-16"
+  },
+  {
+   "episode": "«Военная машина» - фантастический боевик со звездой «Джека Ричера» Аланом Ричсоном",
+   "short": "Военная машина",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:27:25",
+   "category": "Экшен",
+   "release_date": "2026-03-18",
+   "ref_release_date": "2026-03-18"
+  },
+  {
+   "episode": "«Молодой Шерлок»: разбираем новый сериал Гая Ричи - хит или провал?",
+   "short": "Молодой Шерлок",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:30:42",
+   "category": "Детектив",
+   "release_date": "2026-03-20",
+   "ref_release_date": "2026-03-20"
+  },
+  {
+   "episode": "«Прыгуны» - бобры спасают природу в новом анимационном фильме Pixar",
+   "short": "Прыгуны",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:22:58",
+   "category": "Комедия",
+   "release_date": "2026-03-23",
+   "ref_release_date": "2026-03-23"
+  },
+  {
+   "episode": "«Удачи, веселья, не сдохни» - sci-fi-сатира о спасении мира от ИИ",
+   "short": "Удачи веселья не сдохни",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:27:53",
+   "category": "Комедия",
+   "release_date": "2026-03-25",
+   "ref_release_date": "2026-03-25"
+  },
+  {
+   "episode": "«Ограбление в Лос-Анджелесе» - криминальный триллер с Крисом Хемсвортом",
+   "short": "Ограбление в ЛА",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:28:01",
+   "category": "Криминал",
+   "release_date": "2026-03-27",
+   "ref_release_date": "2026-03-27"
+  },
+  {
+   "episode": "«Здесь был Юра» - панки, коммуналка и молчаливый Хабенский в трогательном драмеди",
+   "short": "Здесь был Юра",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:30:06",
+   "category": "Драмеди",
+   "release_date": "2026-03-31",
+   "ref_release_date": "2026-03-30"
+  },
+  {
+   "episode": "Любимые провалы в видеоигровой индустрии: вспоминаем и ностальгируем",
+   "short": "Игровые провалы",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:47:34",
+   "category": "Спецвыпуск",
+   "release_date": "2026-04-01",
+   "ref_release_date": "2026-04-01"
+  },
+  {
+   "episode": "«Гонка» - один из лучших художественных фильмов о Формуле-1",
+   "short": "Гонка",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:24:40",
+   "category": "Драма",
+   "release_date": "2026-04-04",
+   "ref_release_date": "2026-04-03"
+  },
+  {
+   "episode": "Проект «Конец света» - научная одиссея, где Райан Гослинг и пришелец спасают миры",
+   "short": "Конец света",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:46:53",
+   "category": "Приключение",
+   "release_date": "2026-04-06",
+   "ref_release_date": "2026-04-06"
+  },
+  {
+   "episode": "Nintendo Switch 2: все, что нужно знать перед покупкой консоли",
+   "short": "Nintendo Switch 2",
+   "format": "Новый",
+   "genre": "Личный",
+   "duration": "00:42:43",
+   "category": "Спецвыпуск",
+   "release_date": "2026-04-09",
+   "ref_release_date": "2026-04-08"
+  },
+  {
+   "episode": "«Наследник»: «Метод исключения» по-голливудски с Гленом Пауэллом и Маргарет Куолли",
+   "short": "Наследник",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:33:29",
+   "category": "Комедия",
+   "release_date": "2026-04-11",
+   "ref_release_date": "2026-04-10"
+  },
+  {
+   "episode": "«В поисках Гарри: Мастерство, стоящее за магией» - разбираем документальный фильм самого ожидаемого сериала 2026 года",
+   "short": "В поисках Гарри",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:49:25",
+   "category": "Фэнтези",
+   "release_date": "2026-04-13",
+   "ref_release_date": "2026-04-13"
+  },
+  {
+   "episode": "«На помощь!»: кровавое возвращение Сэма Рэйми о выживании на острове",
+   "short": "На помощь!",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:38:41",
+   "category": "Хоррор",
+   "release_date": "2026-04-16",
+   "ref_release_date": "2026-04-15"
+  },
+  {
+   "episode": "Darwin’s Paradox: проблемный платформер об осьминоге в духе Pixar",
+   "short": "Darwin’s Paradox",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:34:30",
+   "category": "Платформер",
+   "release_date": "2026-04-17",
+   "ref_release_date": "2026-04-17"
+  },
+  {
+   "episode": "Replaced: киберпанк, с победившим платформингом",
+   "short": "Replaced",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:34:37",
+   "category": "Приключение",
+   "release_date": "2026-04-21",
+   "ref_release_date": "2026-04-20"
+  },
+  {
+   "episode": "«Супер Марио: Галактическое кино» - как мультивселенная игр Nintendo оживает в кино!",
+   "short": "Супер Марио Галактика",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:26:26",
+   "category": "Приключение",
+   "release_date": "2026-04-22",
+   "ref_release_date": "2026-04-22"
+  },
+  {
+   "episode": "«Очень странные дела: Байки из 85-го»: а стоило ли возвращаться в Хоукинс?",
+   "short": "ОСД Байки из 85-го",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:29:30",
+   "category": "Фантастика",
+   "release_date": "2026-04-27",
+   "ref_release_date": "2026-04-27"
+  },
+  {
+   "episode": "«Неуязвимый» 4 сезон: возвращение жестокого шоу от создателя комикса «Ходячие мертвецы»",
+   "short": "Неуязвимый S4",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:28:48",
+   "category": "Супергероика",
+   "release_date": "2026-04-30",
+   "ref_release_date": "2026-04-29"
+  },
+  {
+   "episode": "Mouse: P.I. For Hire - нуарный Doom в стиле классической анимации Disney",
+   "short": "Mouse P.I.",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:40:57",
+   "category": "Шутер",
+   "release_date": "2026-05-01",
+   "ref_release_date": "2026-05-01"
+  },
+  {
+   "episode": "Saros - секретный хит 2026 года? Обсуждаем новый эксклюзив от Sony",
+   "short": "Saros",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:45:09",
+   "category": "Шутер",
+   "release_date": "2026-05-05",
+   "ref_release_date": "2026-05-04"
+  },
+  {
+   "episode": "«Извне» 4 сезон: вспоминаем все - теорий по-прежнему больше чем ответов",
+   "short": "Извне S4",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:32:29",
+   "category": "Мистика",
+   "release_date": "2026-05-07",
+   "ref_release_date": "2026-05-06"
+  },
+  {
+   "episode": "«Вершина»: безумный Тэрон Эджертон охотится за Шарлиз Терон в австралийском лесу",
+   "short": "Вершина",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:27:10",
+   "category": "Приключение",
+   "release_date": "2026-05-08",
+   "ref_release_date": "2026-05-08"
+  },
+  {
+   "episode": "«Звездные войны. Дарт Мол: Повелитель теней»: лучшее, что случалось с далекой-далекой галактикой?",
+   "short": "Дарт Мол Повелитель теней",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:37:33",
+   "category": "Фантастика",
+   "release_date": "2026-05-11",
+   "ref_release_date": "2026-05-11"
+  },
+  {
+   "episode": "«Вот это драма!»: свадебный переполох с Зендеей и Паттинсоном в провокационном драмеди",
+   "short": "Вот это драма!",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:29:52",
+   "category": "Драма",
+   "release_date": "2026-05-14",
+   "ref_release_date": "2026-05-13"
+  },
+  {
+   "episode": "«Больница Питт»: почему этот сериал уже называют лучшей меддрамой десятилетия",
+   "short": "Больница Питт",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:32:29",
+   "category": "Драма",
+   "release_date": "2026-05-16",
+   "ref_release_date": "2026-05-15"
+  },
+  {
+   "episode": "«Дьявол носит Prada 2»: долгожданное продолжение взрослой сказки о мире моды",
+   "short": "Дьявол носит Prada 2",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:33:05",
+   "category": "Драма",
+   "release_date": "2026-05-19",
+   "ref_release_date": "2026-05-18"
+  },
+  {
+   "episode": "«Рустер» / «Они придут за тобой»: от психологической комедии со Стивом Кареллом до кровавого трэша",
+   "short": "Рустер / Они придут за тобой",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:40:42",
+   "category": "Комедия",
+   "release_date": "2026-05-20",
+   "ref_release_date": "2026-05-20"
+  },
+  {
+   "episode": "«Каратель: Последнее убийство» / «Гэри»: два спецвыпуска, один Джон Бертнал",
+   "short": "Каратель / Гэри",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:17:00",
+   "category": "Драма",
+   "release_date": "2026-05-22",
+   "ref_release_date": "2026-05-22"
+  },
+  {
+   "episode": "«Пацаны»: как завершилась самая циничная и кровавая супергеройская сатира-честный разбор",
+   "short": "Пацаны финал",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "01:12:31",
+   "category": "Супергероика",
+   "release_date": "2026-05-26",
+   "ref_release_date": "2026-05-25"
+  },
+  {
+   "episode": "Mixtape: взросление под бит. Самый музыкальный инди-хит мая",
+   "short": "Mixtape",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:33:44",
+   "category": "Драма",
+   "release_date": "2026-05-27",
+   "ref_release_date": "2026-05-27"
+  },
+  {
+   "episode": "007 First Light: первые впечатления / Lego Batman: Legacy of the Dark Knight",
+   "short": "007 First Light / Lego Batman",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:50:33",
+   "category": "Приключение",
+   "release_date": "2026-06-02",
+   "ref_release_date": "2026-06-01"
+  },
+  {
+   "episode": "Городок / Бороуз: новый хит Netflix от создателей «Очень странных дел»",
+   "short": "Городок / Бороуз",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:37:01",
+   "category": "Мистика",
+   "release_date": "2026-06-04",
+   "ref_release_date": "2026-06-03"
+  },
+  {
+   "episode": "«Паук-Нуар»: серьезный нуар или самоирония? Каким получился эксперимент Marvel",
+   "short": "Паук-Нуар",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:32:20",
+   "category": "Супергероика",
+   "release_date": "2026-06-06",
+   "ref_release_date": "2026-06-05"
+  },
+  {
+   "episode": "«Мандалорец и Грогу»: каким получилось космическое приключение от Джона Фавро?",
+   "short": "Мандалорец и Грогу",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:13:27",
+   "category": "Фантастика",
+   "release_date": "2026-06-08",
+   "ref_release_date": "2026-06-08"
+  },
+  {
+   "episode": "Обо всем и ни о чем конкретно: говорим о кино, играх и выставке State of Play",
+   "short": "State of Play обзор",
+   "format": "Новый",
+   "genre": "Сводный",
+   "duration": "00:57:37",
+   "category": "Спецвыпуск",
+   "release_date": "2026-06-10",
+   "ref_release_date": "2026-06-10"
+  },
+  {
+   "episode": "«Детектив Холе»: мрачный скандинавский нуар по бестселлеру Ю Несбё",
+   "short": "Детектив Холе",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:12:10",
+   "category": "Детектив",
+   "release_date": "2026-06-13",
+   "ref_release_date": "2026-06-12"
+  },
+  {
+   "episode": "Игровой шоу-дайджест: обсуждаем главные анонсы прошедших презентаций",
+   "short": "Игровой дайджест",
+   "format": "Новый",
+   "genre": "Сводный",
+   "duration": "01:27:42",
+   "category": "Спецвыпуск",
+   "release_date": "2026-06-16",
+   "ref_release_date": "2026-06-15"
+  },
+  {
+   "episode": "«Ферма Кларксона»: 5 сезон - продолжение фермерской эпопеи создателей Top Gear",
+   "short": "Ферма Кларксона S5",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:30:50",
+   "category": "Документалка",
+   "release_date": "2026-06-23",
+   "ref_release_date": "2026-06-22"
+  },
+  {
+   "episode": "Uncharted: Drake’s Fortune: начало легендарной серии игр Naughty Dog",
+   "short": "Uncharted 1",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:37:48",
+   "category": "Приключение",
+   "release_date": "2026-06-24",
+   "ref_release_date": "2026-06-24"
+  },
+  {
+   "episode": "«Дом дракона»: старт третьего сезона. Обсуждение битвы при Глотке.",
+   "short": "Дом дракона S3",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:43:51",
+   "category": "Фэнтези",
+   "release_date": "2026-06-30",
+   "ref_release_date": "2026-06-29"
+  },
+  {
+   "episode": "«Обсессия»: как не надо загадывать желание. Разбор главного хоррора года.",
+   "short": "Обсессия",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:14:14",
+   "category": "Ужасы",
+   "release_date": "2026-07-02",
+   "ref_release_date": "2026-07-01"
+  },
+  {
+   "episode": "Uncharted 2: Among Thieves: как сиквел стал эталоном современного приключенческого блокбастера",
+   "short": "Uncharted 2",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:48:19",
+   "category": "Приключение",
+   "release_date": "2026-07-04",
+   "ref_release_date": "2026-07-03"
+  },
+  {
+   "episode": "«Медведь» 5 сезон: финальная глава для героев кулинарной трагикомедии",
+   "short": "Медведь s05",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:44:44",
+   "category": "Драма",
+   "release_date": "2024-11-13",
+   "ref_release_date": "2026-07-06"
+  },
+  {
+   "episode": "«Легенда о Vox Machine»: каким получился 4 сезон анимационного фэнтезийного сериала?",
+   "short": "Vox Machina s4",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:29:46",
+   "category": "Фэнтези",
+   "release_date": "2024-11-13",
+   "ref_release_date": "2026-07-08"
+  },
+  {
+   "episode": "Star Fox: возвращение легендарного рельсового шутера на Nintendo Switch 2",
+   "short": "Star Fox",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:41:29",
+   "category": "Фантастика",
+   "release_date": "2024-11-13",
+   "ref_release_date": "2026-07-10"
+  },
+  {
+   "episode": "«Властелины Вселенной»: летнее космофэнтези в духе 80-х",
+   "short": "Властелины Вселенной",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:32:46",
+   "category": "Фэнтези",
+   "release_date": "2024-11-13",
+   "ref_release_date": "2026-07-13"
+  },
+  {
+   "episode": "«Я найду тебя»: обсуждаем лучший сериал Netflix в этом году",
+   "short": "Я найду тебя",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:32:48",
+   "category": "Детектив",
+   "release_date": null,
+   "ref_release_date": "2026-07-15"
+  },
+  {
+   "episode": "Uncharted 3: ностальгия против правды - что не так с окончанием трилогии приключений Дрейка?",
+   "short": "Uncharted 3",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:47:24",
+   "category": "Приключение",
+   "release_date": null,
+   "ref_release_date": "2026-07-17"
+  }
+ ],
+ "formats": [
+  "Старый",
+  "Новый"
+ ],
+ "genres": [
+  "Сводный",
+  "Сериал",
+  "Игра",
+  "Фильм",
+  "Мультфильм",
+  "Личный"
+ ],
+ "date_min": "2024-11-13",
+ "date_max": "2026-07-15",
+ "record_count": 20660,
+ "episode_count": 159,
+ "important_dates": [
+  {
+   "date": "2025-05-19",
+   "label": "🎤 Фичеринг 1",
+   "color": "#7C3AED",
+   "dash": "dash"
+  },
+  {
+   "date": "2025-09-15",
+   "label": "🎤 Фичеринг 2",
+   "color": "#7C3AED",
+   "dash": "dot"
+  }
+ ],
+ "generated_at": "2026-07-26T23:41:15",
+ "version": 1
+}
