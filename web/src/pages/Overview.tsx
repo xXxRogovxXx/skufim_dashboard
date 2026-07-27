@@ -20,6 +20,7 @@ import { KpiRow } from "../components/KpiRow";
 import TimeChart from "../components/charts/TimeChart";
 import CategoryBar from "../components/charts/CategoryBar";
 import BubbleChart from "../components/charts/BubbleChart";
+import DemographicsSection from "../components/DemographicsSection";
 
 const byId = Object.fromEntries(OVERVIEW_SECTIONS.map((s) => [s.id, s])) as Record<string, SectionDef>;
 
@@ -135,6 +136,8 @@ export default function Overview({ data }: { data: Dataset }) {
       </GlassCard>
 
       <KpiRow items={kpiItems} />
+
+      {data.demographics && <DemographicsSection scope={data.demographics.overall} />}
 
       <Section id="dynamics">
         <TimeChart

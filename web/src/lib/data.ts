@@ -46,14 +46,52 @@ export interface Meta {
   version: number;
 }
 
+// --- Демография (пол / возраст / город) ---
+export interface DemoDim {
+  name: string;
+  starts: number;
+  streams: number;
+}
+export interface CityPoint {
+  name: string;
+  starts: number;
+  streams: number;
+  lon: number;
+  lat: number;
+}
+export interface CityBlock {
+  points: CityPoint[];
+  total_starts: number;
+  total_streams: number;
+  mapped_starts: number;
+  mapped_streams: number;
+}
+export interface DemoScope {
+  gender: DemoDim[];
+  age: DemoDim[];
+  city: CityBlock;
+}
+export interface Demographics {
+  meta: {
+    gender_order: string[];
+    age_order: string[];
+    date_min: string;
+    date_max: string;
+    episode_count: number;
+  };
+  overall: DemoScope;
+  byEpisode: { [episode: string]: DemoScope };
+}
+
 export interface Dataset {
   records: Record[];
   meta: Meta;
+  demographics: Demographics | null;
 }
 
 export async function loadDataset(): Promise<Dataset> {
   const base = import.meta.env.BASE_URL || "/";
-  const [records, meta] = await Promise.all([
+  const [records, meta, demographics] = await Promise.all([
     fetch(`${base}data/records.json`).then((r) => {
       if (!r.ok) throw new Error(`records.json: ${r.status}`);
       return r.json();
@@ -62,6 +100,14 @@ export async function loadDataset(): Promise<Dataset> {
       if (!r.ok) throw new Error(`meta.json: ${r.status}`);
       return r.json();
     }),
+    // demographics.json может отсутствовать (старый экспорт) — не роняем дашборд
+    fetch(`${base}data/demographics.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null),
   ]);
-  return { records: records as Record[], meta: meta as Meta };
+  return {
+    records: records as Record[],
+    meta: meta as Meta,
+    demographics: demographics as Demographics | null,
+  };
 }

@@ -9,6 +9,7 @@ import { SectionTitle, Hint } from "../components/SectionTitle";
 import { KpiRow } from "../components/KpiRow";
 import TimeChart from "../components/charts/TimeChart";
 import FunnelView from "../components/charts/FunnelView";
+import DemographicsCompare from "../components/DemographicsCompare";
 
 const col = (rows: Rec[], k: keyof Rec) => rows.map((r) => (r[k] as number) ?? 0);
 
@@ -188,6 +189,13 @@ export default function Compare({ data }: { data: Dataset }) {
           ]}
           leftLabel="Слушатели" rightLabel="Часы" />
       </GlassCard>
+
+      <DemographicsCompare
+        scope1={data.demographics?.byEpisode[ep1] ?? null}
+        scope2={data.demographics?.byEpisode[ep2] ?? null}
+        label1={m1.short}
+        label2={m2.short}
+      />
 
       <GlassCard>
         <SectionTitle>📈 Сравнение кривых жизни</SectionTitle>

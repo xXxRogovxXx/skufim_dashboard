@@ -14,6 +14,7 @@ import pandas as pd
 
 from .loader import build_merged
 from .metrics import IMPORTANT_DATES
+from .demographics import build_demographics
 
 DEFAULT_OUT = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -124,8 +125,19 @@ def export_all(out_dir=DEFAULT_OUT):
     with open(os.path.join(out_dir, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
 
+    # Демография (пол / возраст / город). Если файлы отсутствуют — не роняем экспорт.
+    demo_ok = False
+    try:
+        demographics = build_demographics()
+        with open(os.path.join(out_dir, "demographics.json"), "w", encoding="utf-8") as f:
+            json.dump(demographics, f, ensure_ascii=False, separators=(",", ":"))
+        demo_ok = True
+    except FileNotFoundError as e:
+        print(f"[WARN] Демография пропущена (нет файла): {e}")
+
     return {
         "out_dir": out_dir,
         "records": len(records),
         "episodes": meta["episode_count"],
+        "demographics": demo_ok,
     }

@@ -15,6 +15,7 @@ def main():
     print(f"  Каталог: {result['out_dir']}")
     print(f"  Записей: {result['records']}")
     print(f"  Выпусков: {result['episodes']}")
+    print(f"  Демография: {'да' if result.get('demographics') else 'нет'}")
 
 
 if __name__ == "__main__":

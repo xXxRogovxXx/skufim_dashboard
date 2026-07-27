@@ -18,6 +18,7 @@ import { SectionTitle, Hint } from "../components/SectionTitle";
 import { KpiRow } from "../components/KpiRow";
 import TimeChart from "../components/charts/TimeChart";
 import FunnelView from "../components/charts/FunnelView";
+import DemographicsSection from "../components/DemographicsSection";
 
 const col = (rows: Rec[], k: keyof Rec) => rows.map((r) => (r[k] as number) ?? 0);
 
@@ -33,6 +34,7 @@ export default function Episode({ data }: { data: Dataset }) {
   const allData = useMemo(() => records.filter((r) => r.episode === episode), [records, episode]);
   const epData = useMemo(() => filterPeriod(allData, release, days), [allData, release, days]);
   const compareData = useMemo(() => filterPeriod(records, release, days), [records, release, days]);
+  const demoScope = data.demographics?.byEpisode[episode] ?? null;
 
   if (epData.length === 0) {
     return (
@@ -163,6 +165,8 @@ export default function Episode({ data }: { data: Dataset }) {
           ]}
           leftLabel="Слушатели" rightLabel="Часы" />
       </GlassCard>
+
+      {demoScope && <DemographicsSection scope={demoScope} />}
 
       <GlassCard>
         <SectionTitle>📈 Кривая жизни выпуска</SectionTitle>
