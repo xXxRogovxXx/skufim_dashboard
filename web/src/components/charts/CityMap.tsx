@@ -48,7 +48,7 @@ export default function CityMap({ points, metric, height = 460 }: Props) {
   const radius = (v: number) => R_MIN + Math.sqrt(v / maxVal) * (R_MAX - R_MIN);
 
   return (
-    <div ref={wrapRef} style={{ position: "relative", width: "100%", height }}>
+    <div ref={wrapRef} className="city-map" style={{ position: "relative", width: "100%", height }}>
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{ center: [60, 56], scale: 300 }}

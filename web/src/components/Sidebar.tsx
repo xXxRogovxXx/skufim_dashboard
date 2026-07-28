@@ -3,10 +3,10 @@ import { formatDateRu } from "../lib/format";
 
 export type PageId = "overview" | "episode" | "compare";
 
-const NAV: { id: PageId; icon: string; label: string }[] = [
-  { id: "overview", icon: "📊", label: "Общая аналитика" },
-  { id: "episode", icon: "📋", label: "Анализ выпуска" },
-  { id: "compare", icon: "🔄", label: "Сравнение выпусков" },
+const NAV: { id: PageId; icon: string; label: string; short: string }[] = [
+  { id: "overview", icon: "📊", label: "Общая аналитика", short: "Общая" },
+  { id: "episode", icon: "📋", label: "Анализ выпуска", short: "Выпуск" },
+  { id: "compare", icon: "🔄", label: "Сравнение выпусков", short: "Сравнить" },
 ];
 
 interface Props {
@@ -29,8 +29,9 @@ export default function Sidebar({ page, onChange, importantDates }: Props) {
             className={`nav-item ${page === n.id ? "active" : ""}`}
             onClick={() => onChange(n.id)}
           >
-            <span>{n.icon}</span>
-            <span>{n.label}</span>
+            <span className="nav-item__icon">{n.icon}</span>
+            <span className="nav-item__label-full">{n.label}</span>
+            <span className="nav-item__label-short">{n.short}</span>
           </button>
         ))}
       </nav>

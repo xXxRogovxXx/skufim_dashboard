@@ -792,3 +792,224 @@ table.data tbody tr:hover td {
   border-radius: 12px !important;
   backdrop-filter: blur(10px);
 }
+
+/* Короткая подпись навигации — только на мобильных */
+.nav-item__label-short {
+  display: none;
+}
+
+/* ------------------------------------------------
+   ЭКРАН ПАРОЛЯ
+------------------------------------------------ */
+.gate {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.gate-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 2.2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: popIn 0.5s var(--ease-out) both;
+}
+.gate-logo {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+.gate-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.gate-sub {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0.3rem 0 1.4rem;
+}
+.gate-input {
+  width: 100%;
+  background: var(--field-bg);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+.gate-input:focus {
+  border-color: var(--accent-soft);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.22);
+}
+.gate-input--error {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.18);
+}
+.gate-error {
+  color: #fca5a5;
+  font-size: 0.8rem;
+  margin-top: 0.6rem;
+}
+.gate-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+  transition: transform 0.12s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+.gate-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+}
+.gate-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* ------------------------------------------------
+   МОБИЛЬНЫЕ УСТРОЙСТВА (нижняя навигация)
+------------------------------------------------ */
+@media (max-width: 720px) {
+  .app {
+    flex-direction: column;
+  }
+
+  /* Сайдбар → закреплённая нижняя панель */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: auto;
+    margin: 0;
+    padding: 0.35rem 0.5rem;
+    padding-bottom: calc(0.35rem + env(safe-area-inset-bottom));
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    z-index: 100;
+  }
+  .sidebar__brand,
+  .sidebar__section,
+  .legend-item {
+    display: none;
+  }
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
+  }
+  .nav-item {
+    flex-direction: column;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0.45rem 0.2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.66rem;
+    font-weight: 600;
+  }
+  .nav-item:hover {
+    transform: none;
+  }
+  .nav-item.active::before {
+    display: none;
+  }
+  .nav-item__icon {
+    font-size: 1.2rem;
+  }
+  .nav-item__label-full {
+    display: none;
+  }
+  .nav-item__label-short {
+    display: inline;
+  }
+
+  /* Отступ снизу под нижнюю панель */
+  .main {
+    padding: 1rem 0.85rem calc(76px + env(safe-area-inset-bottom));
+  }
+  .section {
+    padding: 1.1rem 1rem;
+    border-radius: 20px;
+  }
+
+  /* Заголовок компактнее */
+  .page-title {
+    font-size: 1.9rem;
+  }
+  .page-sub {
+    margin-bottom: 1.2rem;
+  }
+
+  /* KPI — по 2 в ряд, компактнее */
+  .kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+  .kpi {
+    padding: 0.9rem 0.6rem;
+  }
+  .kpi__value {
+    font-size: 1.4rem;
+  }
+  .kpi__icon {
+    font-size: 1.15rem;
+  }
+
+  /* Поля фильтров — на всю ширину */
+  .controls-bar {
+    gap: 0.8rem;
+  }
+  .controls-bar .field {
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+  .controls-bar select,
+  .controls-bar input[type="date"] {
+    width: 100%;
+  }
+
+  /* Заголовок секции + тумблер в столбик */
+  .section-head {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  /* Карта ниже, тултип чуть меньше */
+  .city-map {
+    height: 340px !important;
+  }
+  .map-hint {
+    display: none;
+  }
+}
+
+/* Совсем узкие экраны — KPI в один столбец */
+@media (max-width: 380px) {
+  .kpi-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .page-title {
+    font-size: 1.7rem;
+  }
+}

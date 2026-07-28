@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AuroraBackground from "./components/AuroraBackground";
+import PasswordGate from "./components/PasswordGate";
 import Sidebar, { type PageId } from "./components/Sidebar";
 import Overview from "./pages/Overview";
 import Episode from "./pages/Episode";
@@ -16,7 +17,7 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <PasswordGate>
       <AuroraBackground />
       {error ? (
         <div className="error-box">
@@ -36,6 +37,6 @@ export default function App() {
           </main>
         </div>
       )}
-    </>
+    </PasswordGate>
   );
 }
