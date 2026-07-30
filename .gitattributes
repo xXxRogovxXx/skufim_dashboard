@@ -1,6 +1,10 @@
 # Единообразные переводы строк в репозитории (LF), чтобы не было шума CRLF/LF
 * text=auto eol=lf
 
+# Windows-батники должны быть CRLF, иначе cmd.exe их неправильно парсит
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
 # Бинарные файлы
 *.xlsx binary
 *.woff2 binary
