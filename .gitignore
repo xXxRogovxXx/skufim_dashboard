@@ -10,6 +10,7 @@ _dashboard_fixed.py
 # --- Node / фронтенд ---
 web/node_modules/
 web/dist/
+web/dist-exe/
 *.tsbuildinfo
 
 # --- PyInstaller (сборка .exe) ---

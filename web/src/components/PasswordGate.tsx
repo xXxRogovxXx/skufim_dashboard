@@ -8,9 +8,16 @@ async function sha256(text: string): Promise<string> {
     .join("");
 }
 
+// Сборка для .exe отключает пароль (VITE_DISABLE_GATE=true): программа работает
+// локально на машине пользователя, экран пароля там не нужен. Веб-версия
+// (GitHub Pages) собирается без этого флага — пароль остаётся.
+const GATE_DISABLED = import.meta.env.VITE_DISABLE_GATE === "true";
+
 export default function PasswordGate({ children }: { children: ReactNode }) {
   const [ok, setOk] = useState(
-    () => localStorage.getItem(ACCESS_STORAGE_KEY) === ACCESS_PASSWORD_SHA256
+    () =>
+      GATE_DISABLED ||
+      localStorage.getItem(ACCESS_STORAGE_KEY) === ACCESS_PASSWORD_SHA256
   );
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
