@@ -11,6 +11,20 @@ def _path(name):
     return os.path.join(data_dir(), name)
 
 
+# Колонки-признаки того, что в Общая.xlsx лежит демографическая разбивка
+DEMO_COLS = {"Пол", "Возраст", "Город"}
+PCT_COLS = ["% дослушиваемости", "Средний % прослушивания"]
+COUNT_COLS = ["Старты", "Стримы", "Слушатели", "Часы"]
+
+
+def _pct_to_fraction(series):
+    """Приводит проценты к доле 0..1. Если шкала 0..100 — делит на 100."""
+    s = pd.to_numeric(series, errors="coerce")
+    if s.notna().any() and s.max() > 1.5:
+        s = s / 100.0
+    return s
+
+
 def load_data():
     """Возвращает (df_total, df_ref, short_names_dict) без Streamlit-зависимостей."""
     df_total = pd.read_excel(_path("Общая.xlsx"), sheet_name="Общая")
@@ -29,10 +43,32 @@ def load_data():
         df_ref["Выпуск"].map(short_names_dict).fillna(df_ref["Выпуск"])
     )
 
-    df_total["Средний_прослушивания"] = df_total.get("Средний % прослушивания", 0).fillna(0)
-    df_total["Дослушиваемость"] = df_total.get("% дослушиваемости", 0).fillna(0)
-    df_total["Слушатели"] = df_total.get("Слушатели", 0).fillna(0)
-    df_total["Часы"] = df_total.get("Часы", 0).fillna(0)
+    # Формат «демография внутри Общая.xlsx»: одна строка = сегмент (город×возраст×пол),
+    # проценты заполнены лишь в части строк. Схлопываем к уровню дата×выпуск:
+    # счётчики суммируем, проценты усредняем по НЕпустым (иначе среднее занижается).
+    if DEMO_COLS & set(df_total.columns):
+        agg = {}
+        for c in COUNT_COLS:
+            if c in df_total.columns:
+                agg[c] = "sum"
+        for c in PCT_COLS:
+            if c in df_total.columns:
+                agg[c] = "mean"  # pandas mean игнорирует NaN
+        df_total = (
+            df_total.groupby(["Дата прослушивания", "Выпуск"], as_index=False).agg(agg)
+        )
+
+    # Проценты → доля 0..1 (автоопределение шкалы 0..100 vs 0..1)
+    df_total["Средний_прослушивания"] = _pct_to_fraction(
+        df_total.get("Средний % прослушивания", 0)
+    ).fillna(0)
+    df_total["Дослушиваемость"] = _pct_to_fraction(
+        df_total.get("% дослушиваемости", 0)
+    ).fillna(0)
+    df_total["Слушатели"] = pd.to_numeric(
+        df_total.get("Слушатели", 0), errors="coerce"
+    ).fillna(0)
+    df_total["Часы"] = pd.to_numeric(df_total.get("Часы", 0), errors="coerce").fillna(0)
 
     return df_total, df_ref, short_names_dict
 
