@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
 """Демография: пол / возраст / город по стартам и стримам.
 
-Источники — «Старты.xlsx» и «Стримы.xlsx» (лист 'Chart data'), гранулярность
-дата × выпуск × пол × возраст × город. Мержим оба файла по этим измерениям и
-агрегируем в компактные распределения: overall и по каждому выпуску.
+Поддерживаются два формата исходных данных (алгоритм определяет сам):
+
+1) Отдельные файлы «Старты.xlsx» и «Стримы.xlsx» (лист 'Chart data') с
+   колонками Дата/Эпизод_2/Пол/Возраст/Город + метрика.
+2) Единый «Общая.xlsx» (лист 'Общая'), где демография лежит прямо в строках:
+   колонки Пол/Возраст/Город рядом со Старты/Стримы/Выпуск.
+
+В обоих случаях приводим к df: episode, gender, age, city, starts, streams —
+и агрегируем в компактные распределения (overall + по выпускам).
 """
 import os
 
@@ -15,6 +21,8 @@ from .paths import data_dir
 SHEET = "Chart data"
 STARTS_FILE = "Старты.xlsx"
 STREAMS_FILE = "Стримы.xlsx"
+GENERAL_FILE = "Общая.xlsx"
+GENERAL_SHEET = "Общая"
 
 # Порядок категорий для стабильного вывода
 GENDER_ORDER = ["Женщины", "Мужчины", "Не определен"]
@@ -29,8 +37,21 @@ def _path(name):
     return os.path.join(data_dir(), name)
 
 
+def _load_demographics_df():
+    """Единый df (episode, gender, age, city, starts, streams) из любого формата."""
+    if os.path.exists(_path(STARTS_FILE)) and os.path.exists(_path(STREAMS_FILE)):
+        return _load_pair()
+    if os.path.exists(_path(GENERAL_FILE)):
+        df = _load_from_general()
+        if df is not None:
+            return df
+    raise FileNotFoundError(
+        "нет демографии: ни Старты.xlsx/Стримы.xlsx, ни колонок Пол/Возраст/Город в Общая.xlsx"
+    )
+
+
 def _load_pair():
-    """Возвращает df: date, episode, gender, age, city, starts, streams."""
+    """Формат 1: отдельные Старты.xlsx + Стримы.xlsx (лист 'Chart data')."""
     ds = pd.read_excel(_path(STARTS_FILE), sheet_name=SHEET)
     dm = pd.read_excel(_path(STREAMS_FILE), sheet_name=SHEET)
     dims = ["Дата прослушивания", "Эпизод_2", "Пол", "Возраст", "Город"]
@@ -42,6 +63,25 @@ def _load_pair():
     df = df.rename(columns={
         "Эпизод_2": "episode", "Пол": "gender", "Возраст": "age", "Город": "city",
     })
+    return df
+
+
+def _load_from_general():
+    """Формат 2: демография внутри Общая.xlsx (колонки Пол/Возраст/Город).
+
+    Возвращает df или None, если демо-колонок в файле нет.
+    """
+    df = pd.read_excel(_path(GENERAL_FILE), sheet_name=GENERAL_SHEET)
+    needed = {"Пол", "Возраст", "Город", "Выпуск", "Старты", "Стримы"}
+    if not needed.issubset(set(df.columns)):
+        return None
+    df = df.rename(columns={
+        "Выпуск": "episode", "Пол": "gender", "Возраст": "age",
+        "Город": "city", "Старты": "starts", "Стримы": "streams",
+    })
+    df = df[["episode", "gender", "age", "city", "starts", "streams"]].copy()
+    df["starts"] = pd.to_numeric(df["starts"], errors="coerce").fillna(0)
+    df["streams"] = pd.to_numeric(df["streams"], errors="coerce").fillna(0)
     return df
 
 
@@ -101,7 +141,7 @@ def _scope(df, city_top):
 
 
 def build_demographics():
-    df = _load_pair()
+    df = _load_demographics_df()
 
     overall = _scope(df, CITY_TOP_OVERALL)
 
@@ -113,8 +153,6 @@ def build_demographics():
         "meta": {
             "gender_order": GENDER_ORDER,
             "age_order": AGE_ORDER,
-            "date_min": str(df["Дата прослушивания"].min())[:10],
-            "date_max": str(df["Дата прослушивания"].max())[:10],
             "episode_count": int(df["episode"].nunique()),
         },
         "overall": overall,
