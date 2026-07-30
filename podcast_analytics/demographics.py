@@ -10,8 +10,7 @@ import os
 import pandas as pd
 
 from .geo import normalize_city, city_coords
-
-SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from .paths import data_dir
 
 SHEET = "Chart data"
 STARTS_FILE = "Старты.xlsx"
@@ -27,7 +26,7 @@ CITY_TOP_EPISODE = 40
 
 
 def _path(name):
-    return os.path.join(SCRIPT_DIR, name)
+    return os.path.join(data_dir(), name)
 
 
 def _load_pair():

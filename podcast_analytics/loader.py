@@ -4,12 +4,11 @@ import os
 import pandas as pd
 
 from .metrics import calculate_rsi
-
-SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from .paths import data_dir
 
 
 def _path(name):
-    return os.path.join(SCRIPT_DIR, name)
+    return os.path.join(data_dir(), name)
 
 
 def load_data():

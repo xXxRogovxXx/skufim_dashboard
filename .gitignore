@@ -11,6 +11,11 @@ _dashboard_fixed.py
 web/node_modules/
 web/dist/
 *.tsbuildinfo
+
+# --- PyInstaller (сборка .exe) ---
+/build/
+/dist/
+*.spec
 # скомпилированный tsc-ом конфиг (артефакт сборки)
 web/vite.config.js
 web/vite.config.d.ts
