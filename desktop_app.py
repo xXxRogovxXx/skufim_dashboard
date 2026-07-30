@@ -88,11 +88,17 @@ def main():
     shutil.rmtree(work, ignore_errors=True)
     shutil.copytree(dist, work)
 
+    # ВАЖНО: полностью очищаем папку данных, чтобы никогда не показать чужие
+    # (bundled) данные, если у пользователя нет части Excel-файлов.
+    data_out = os.path.join(work, "data")
+    shutil.rmtree(data_out, ignore_errors=True)
+    os.makedirs(data_out, exist_ok=True)
+
     # Генерация JSON из Excel
     print("Чтение Excel и подготовка данных…")
     try:
         from podcast_analytics.export import export_all
-        result = export_all(out_dir=os.path.join(work, "data"))
+        result = export_all(out_dir=data_out)
         print(f"  Записей: {result['records']} | Выпусков: {result['episodes']}"
               f" | Демография: {'да' if result.get('demographics') else 'нет'}")
     except FileNotFoundError as e:

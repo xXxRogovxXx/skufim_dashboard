@@ -125,7 +125,8 @@ def export_all(out_dir=DEFAULT_OUT):
     with open(os.path.join(out_dir, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
 
-    # Демография (пол / возраст / город). Если файлы отсутствуют — не роняем экспорт.
+    # Демография (пол / возраст / город). Любая проблема с файлами не должна
+    # ронять весь дашборд — просто пропускаем демографию (блоки скроются).
     demo_ok = False
     try:
         demographics = build_demographics()
@@ -133,7 +134,9 @@ def export_all(out_dir=DEFAULT_OUT):
             json.dump(demographics, f, ensure_ascii=False, separators=(",", ":"))
         demo_ok = True
     except FileNotFoundError as e:
-        print(f"[WARN] Демография пропущена (нет файла): {e}")
+        print(f"[WARN] Демография пропущена (нет файла Старты.xlsx/Стримы.xlsx): {e}")
+    except Exception as e:
+        print(f"[WARN] Демография пропущена (не удалось разобрать файл): {e}")
 
     return {
         "out_dir": out_dir,
