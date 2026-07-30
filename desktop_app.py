@@ -20,12 +20,35 @@ import webbrowser
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
-# UTF-8 в консоли Windows, чтобы кириллица не падала
-try:
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
-except Exception:
-    pass
+# В упакованном приложении (без консоли) stdout=None → перенаправляем вывод в
+# лог-файл, иначе print() упадёт. В dev-режиме оставляем консоль.
+if getattr(sys, "frozen", False):
+    try:
+        _log = open(os.path.join(tempfile.gettempdir(), "podcast_dashboard.log"),
+                    "w", encoding="utf-8")
+        sys.stdout = _log
+        sys.stderr = _log
+    except Exception:
+        pass
+else:
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+
+def fatal(msg):
+    """Показывает ошибку в диалоговом окне (без консоли) и выходит."""
+    print("[ОШИБКА]", msg)
+    try:
+        import ctypes
+        ctypes.windll.user32.MessageBoxW(
+            0, msg, "Подкаст · Аналитика — ошибка", 0x10
+        )
+    except Exception:
+        pass
+    sys.exit(1)
 
 
 def base_dir():
@@ -61,14 +84,6 @@ def find_free_port(start=8765, attempts=40):
     return start
 
 
-def pause_and_exit(code=1):
-    try:
-        input("\nНажмите Enter, чтобы закрыть…")
-    except Exception:
-        pass
-    sys.exit(code)
-
-
 def main():
     print("=" * 56)
     print("  Подкаст · Аналитика — локальный дашборд")
@@ -80,8 +95,7 @@ def main():
 
     dist = dist_source()
     if not os.path.exists(dist):
-        print("[ОШИБКА] Не найден собранный фронтенд (web/dist).")
-        pause_and_exit()
+        fatal("Повреждённая сборка: не найден фронтенд внутри приложения.")
 
     # Рабочая папка: копия фронтенда + свежие данные
     work = os.path.join(tempfile.gettempdir(), "podcast_dashboard_run")
@@ -102,13 +116,14 @@ def main():
         print(f"  Записей: {result['records']} | Выпусков: {result['episodes']}"
               f" | Демография: {'да' if result.get('demographics') else 'нет'}")
     except FileNotFoundError as e:
-        print(f"[ОШИБКА] Не найден Excel-файл: {e}")
-        print("Положите рядом с программой: Общая.xlsx, Спр.xlsx, "
-              "Короткие названия.xlsx (и Старты.xlsx / Стримы.xlsx для демографии).")
-        pause_and_exit()
+        fatal(
+            "Не найден нужный Excel-файл.\n\n"
+            "Положите рядом с программой файлы:\n"
+            "• Общая.xlsx\n• Спр.xlsx\n• Короткие названия.xlsx\n\n"
+            f"Подробнее: {e}"
+        )
     except Exception as e:
-        print(f"[ОШИБКА] Не удалось обработать данные: {e}")
-        pause_and_exit()
+        fatal(f"Не удалось обработать данные:\n\n{e}")
 
     # Локальный сервер
     port = find_free_port()
@@ -118,8 +133,8 @@ def main():
 
     print("-" * 56)
     print(f"Дашборд открыт: {url}")
-    print("Пароль по умолчанию: skufim2026")
-    print("Чтобы закрыть — закройте это окно.")
+    print("Приложение работает в фоне. Чтобы остановить — закройте вкладку")
+    print("браузера и завершите 'PodcastDashboard' в Диспетчере задач.")
     print("-" * 56)
 
     threading.Timer(1.0, lambda: webbrowser.open(url)).start()

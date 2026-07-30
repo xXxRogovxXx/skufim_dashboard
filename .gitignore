@@ -32,3 +32,6 @@ Thumbs.db
 
 # --- Временное ---
 scratch_*.json
+
+# превью иконки (генерируется make_icon.py)
+app_icon.png

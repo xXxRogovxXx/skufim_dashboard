@@ -46,11 +46,15 @@ shutil.copytree(DIST_EXE, STAGE)
 shutil.rmtree(os.path.join(STAGE, "data"), ignore_errors=True)
 print(f"Упаковываю фронтенд без data/: {STAGE}")
 
+ICON = os.path.join(ROOT, "app_icon.ico")
+icon_args = ["--icon", ICON] if os.path.exists(ICON) else []
+
 PyInstaller.__main__.run([
     "desktop_app.py",
     "--name", "PodcastDashboard",
     "--onefile",
-    "--console",
+    "--windowed",  # без консольного окна — тихий запуск, сразу браузер
+    *icon_args,
     # фронтенд внутрь exe как 'web_dist' (без данных разработчика)
     "--add-data", f"{STAGE}{os.pathsep}web_dist",
     # надёжно тянем пакеты
