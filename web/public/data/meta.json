@@ -1589,6 +1589,56 @@
    "category": "Приключение",
    "release_date": null,
    "ref_release_date": "2026-07-17"
+  },
+  {
+   "episode": "«Следствие ведут овечки»: мечтает ли Хью Джекман о говорящих овцах?",
+   "short": "Следствие ведут овечки",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:27:50",
+   "category": "Детектив",
+   "release_date": null,
+   "ref_release_date": "2026-07-20"
+  },
+  {
+   "episode": "Uncharted 4: A Thief’s End и The Lost Legacy: обсуждаем великий финал и спорный аддон творения Naughty Dog",
+   "short": "Uncharted 4",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "01:13:35",
+   "category": "Приключение",
+   "release_date": null,
+   "ref_release_date": "2026-07-22"
+  },
+  {
+   "episode": "The Life and Suffering of Prince Jerian: исповедь обреченного принца. Мнение о возможно лучшей истории года.",
+   "short": "Джериан",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:23:37",
+   "category": "Приключение",
+   "release_date": null,
+   "ref_release_date": "2026-07-27"
+  },
+  {
+   "episode": "«Закулисье реальности»: психологический хоррор по мотивам популярной крипипасты",
+   "short": "Backrooms",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:46:39",
+   "category": "Ужасы",
+   "release_date": null,
+   "ref_release_date": "2026-07-29"
+  },
+  {
+   "episode": "«История игрушек 5» : необязательное возвращение культовой франшизы?",
+   "short": "Toy Story 5",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:28:34",
+   "category": "Приключение",
+   "release_date": null,
+   "ref_release_date": "2026-07-31"
   }
  ],
  "formats": [
@@ -1606,7 +1656,7 @@
  "date_min": "2024-11-13",
  "date_max": "2026-07-15",
  "record_count": 20660,
- "episode_count": 159,
+ "episode_count": 164,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1621,6 +1671,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-07-27T13:06:33",
+ "generated_at": "2026-07-30T22:50:44",
  "version": 1
 }
