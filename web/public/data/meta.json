@@ -147,7 +147,7 @@
    "genre": "Сводный",
    "duration": "01:23:05",
    "category": "Сводный",
-   "release_date": "2025-04-07",
+   "release_date": "2026-03-01",
    "ref_release_date": "2025-04-07"
   },
   {
@@ -1671,6 +1671,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-07-31T10:36:41",
+ "generated_at": "2026-07-31T10:55:23",
  "version": 1
 }

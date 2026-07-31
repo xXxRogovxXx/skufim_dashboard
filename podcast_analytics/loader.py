@@ -11,13 +11,31 @@ def _path(name):
     return os.path.join(data_dir(), name)
 
 
+# Разные выгрузки называют колонки по-разному — приводим к каноничным именам
+COLUMN_ALIASES = {
+    "Эпизод": "Выпуск",
+    "Эпизод_2": "Выпуск",
+    "Авторизованные слушатели": "Слушатели",
+    "Уникальные слушатели": "Слушатели",
+    "Процент дослушиваемости, %": "% дослушиваемости",
+    "Процент дослушиваемости": "% дослушиваемости",
+    "Средний процент прослушивания, %": "Средний % прослушивания",
+    "Средний процент прослушивания": "Средний % прослушивания",
+}
+
+
+def apply_aliases(df):
+    ren = {k: v for k, v in COLUMN_ALIASES.items()
+           if k in df.columns and v not in df.columns}
+    return df.rename(columns=ren) if ren else df
+
+
 # Колонки-признаки того, что в Общая.xlsx лежит демографическая разбивка
 DEMO_COLS = {"Пол", "Возраст", "Город"}
 # Аддитивные метрики (свои для каждого сегмента) — суммируем
-SUM_COLS = ["Старты", "Стримы"]
-# Метрики-тоталы, повторённые на каждой демо-строке (Слушатели/Часы), и проценты
-# — усредняем по «день-выпуск» (иначе Слушатели/Часы раздуваются в N раз)
-MEAN_COLS = ["Слушатели", "Часы", "% дослушиваемости", "Средний % прослушивания"]
+SUM_COLS = ["Старты", "Стримы", "Слушатели", "Часы"]
+# Проценты — усредняем по «день-выпуск» (иначе среднее занижается нулями)
+MEAN_COLS = ["% дослушиваемости", "Средний % прослушивания"]
 
 
 def _pct_to_fraction(series):
@@ -30,8 +48,8 @@ def _pct_to_fraction(series):
 
 def load_data():
     """Возвращает (df_total, df_ref, short_names_dict) без Streamlit-зависимостей."""
-    df_total = pd.read_excel(_path("Общая.xlsx"), sheet_name="Общая")
-    df_ref = pd.read_excel(_path("Спр.xlsx"), sheet_name="Спр")
+    df_total = apply_aliases(pd.read_excel(_path("Общая.xlsx"), sheet_name="Общая"))
+    df_ref = apply_aliases(pd.read_excel(_path("Спр.xlsx"), sheet_name="Спр"))
     try:
         df_short = pd.read_excel(_path("Короткие названия.xlsx"))
         short_names_dict = dict(

@@ -17,6 +17,7 @@ import pandas as pd
 
 from .geo import normalize_city, city_coords
 from .paths import data_dir
+from .loader import apply_aliases
 
 SHEET = "Chart data"
 STARTS_FILE = "Старты.xlsx"
@@ -71,7 +72,7 @@ def _load_from_general():
 
     Возвращает df или None, если демо-колонок в файле нет.
     """
-    df = pd.read_excel(_path(GENERAL_FILE), sheet_name=GENERAL_SHEET)
+    df = apply_aliases(pd.read_excel(_path(GENERAL_FILE), sheet_name=GENERAL_SHEET))
     needed = {"Пол", "Возраст", "Город", "Выпуск", "Старты", "Стримы"}
     if not needed.issubset(set(df.columns)):
         return None
