@@ -1639,6 +1639,86 @@
    "category": "Приключение",
    "release_date": null,
    "ref_release_date": "2026-07-31"
+  },
+  {
+   "episode": "«Супергерл»: первый промах во вселенной DC Джеймса Ганна?",
+   "short": "Супергерл",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:40:55",
+   "category": "Фантастика",
+   "release_date": null,
+   "ref_release_date": "2026-08-03"
+  },
+  {
+   "episode": "«День разоблачения»: обсуждаем, что не так с новым фильмом об НЛО Спилберга",
+   "short": "День разоблачения",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:33:48",
+   "category": "Фантастика",
+   "release_date": null,
+   "ref_release_date": "2026-08-05"
+  },
+  {
+   "episode": "«Бэтмен: Крестоносец в плаще»: история создания и впечатления от 2 сезона",
+   "short": "Бэтмен: Крестоносец в плаще",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:10:32",
+   "category": "Супергероика",
+   "release_date": null,
+   "ref_release_date": "2026-08-10"
+  },
+  {
+   "episode": "«Одиссея»: монументальный эпос от Кристофера Нолана",
+   "short": "Одиссея",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "01:02:20",
+   "category": "Фэнтези",
+   "release_date": null,
+   "ref_release_date": "2026-08-12"
+  },
+  {
+   "episode": "Scottside: впечатления от визуальной новеллы в духе «Очень странных дел»",
+   "short": "Scottside",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:39:15",
+   "category": "Фантастика",
+   "release_date": null,
+   "ref_release_date": "2026-08-14"
+  },
+  {
+   "episode": "«Дом дракона»: обсуждаем финал третьего сезона главного фэнтези лета",
+   "short": "Дом дракона",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:53:37",
+   "category": "Фэнтези",
+   "release_date": null,
+   "ref_release_date": "2026-08-17"
+  },
+  {
+   "episode": "«Шугар»: как создавали неонуар с Колином Фарреллом и впечатления от второго сезона",
+   "short": "Шугар",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:09:52",
+   "category": "Детектив",
+   "release_date": null,
+   "ref_release_date": "2026-08-19"
+  },
+  {
+   "episode": "Uncharted: Golden Abyss - лучшая игра для PS Vita, но худшая в серии? Завершаем марафон по серии.",
+   "short": "Uncharted Golden Abyss",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:51:49",
+   "category": "Приключение",
+   "release_date": null,
+   "ref_release_date": "2026-08-21"
   }
  ],
  "formats": [
@@ -1656,7 +1736,7 @@
  "date_min": "2024-11-13",
  "date_max": "2026-07-25",
  "record_count": 18699,
- "episode_count": 164,
+ "episode_count": 172,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1671,6 +1751,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-07-31T10:55:23",
+ "generated_at": "2026-08-17T19:29:29",
  "version": 1
 }
