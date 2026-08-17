@@ -1617,7 +1617,7 @@
    "genre": "Игра",
    "duration": "00:23:37",
    "category": "Приключение",
-   "release_date": null,
+   "release_date": "2026-07-28",
    "ref_release_date": "2026-07-27"
   },
   {
@@ -1627,7 +1627,7 @@
    "genre": "Фильм",
    "duration": "00:46:39",
    "category": "Ужасы",
-   "release_date": null,
+   "release_date": "2026-07-29",
    "ref_release_date": "2026-07-29"
   },
   {
@@ -1637,7 +1637,7 @@
    "genre": "Мультфильм",
    "duration": "00:28:34",
    "category": "Приключение",
-   "release_date": null,
+   "release_date": "2026-08-01",
    "ref_release_date": "2026-07-31"
   },
   {
@@ -1647,7 +1647,7 @@
    "genre": "Фильм",
    "duration": "00:40:55",
    "category": "Фантастика",
-   "release_date": null,
+   "release_date": "2026-08-04",
    "ref_release_date": "2026-08-03"
   },
   {
@@ -1657,7 +1657,7 @@
    "genre": "Фильм",
    "duration": "00:33:48",
    "category": "Фантастика",
-   "release_date": null,
+   "release_date": "2026-08-05",
    "ref_release_date": "2026-08-05"
   },
   {
@@ -1667,7 +1667,7 @@
    "genre": "Мультфильм",
    "duration": "00:10:32",
    "category": "Супергероика",
-   "release_date": null,
+   "release_date": "2026-08-10",
    "ref_release_date": "2026-08-10"
   },
   {
@@ -1677,7 +1677,7 @@
    "genre": "Фильм",
    "duration": "01:02:20",
    "category": "Фэнтези",
-   "release_date": null,
+   "release_date": "2026-08-12",
    "ref_release_date": "2026-08-12"
   },
   {
@@ -1687,7 +1687,7 @@
    "genre": "Игра",
    "duration": "00:39:15",
    "category": "Фантастика",
-   "release_date": null,
+   "release_date": "2026-08-15",
    "ref_release_date": "2026-08-14"
   },
   {
@@ -1734,8 +1734,8 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-07-25",
- "record_count": 18699,
+ "date_max": "2026-08-16",
+ "record_count": 19586,
  "episode_count": 172,
  "important_dates": [
   {
@@ -1751,6 +1751,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-08-17T19:29:29",
+ "generated_at": "2026-08-17T19:32:26",
  "version": 1
 }
