@@ -1697,7 +1697,7 @@
    "genre": "Сериал",
    "duration": "00:53:37",
    "category": "Фэнтези",
-   "release_date": null,
+   "release_date": "2026-08-18",
    "ref_release_date": "2026-08-17"
   },
   {
@@ -1734,8 +1734,8 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-08-16",
- "record_count": 19586,
+ "date_max": "2026-08-19",
+ "record_count": 19718,
  "episode_count": 172,
  "important_dates": [
   {
@@ -1751,6 +1751,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-08-17T19:32:26",
+ "generated_at": "2026-08-20T21:53:43",
  "version": 1
 }
