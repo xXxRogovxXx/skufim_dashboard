@@ -15,6 +15,7 @@ import pandas as pd
 from .loader import build_merged
 from .metrics import IMPORTANT_DATES
 from .demographics import build_demographics
+from .insights import build_insights
 
 DEFAULT_OUT = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -137,6 +138,14 @@ def export_all(out_dir=DEFAULT_OUT):
         print(f"[WARN] Демография пропущена (нет файла Старты.xlsx/Стримы.xlsx): {e}")
     except Exception as e:
         print(f"[WARN] Демография пропущена (не удалось разобрать файл): {e}")
+
+    # Аналитика для страницы «Инсайты» — не критична, при сбое пропускаем
+    try:
+        insights = build_insights()
+        with open(os.path.join(out_dir, "insights.json"), "w", encoding="utf-8") as f:
+            json.dump(insights, f, ensure_ascii=False, separators=(",", ":"))
+    except Exception as e:
+        print(f"[WARN] Инсайты пропущены: {e}")
 
     return {
         "out_dir": out_dir,

@@ -5,6 +5,7 @@ import Sidebar, { type PageId } from "./components/Sidebar";
 import Overview from "./pages/Overview";
 import Episode from "./pages/Episode";
 import Compare from "./pages/Compare";
+import Insights from "./pages/Insights";
 import { loadDataset, type Dataset } from "./lib/data";
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
             {page === "overview" && <Overview data={data} />}
             {page === "episode" && <Episode data={data} />}
             {page === "compare" && <Compare data={data} />}
+            {page === "insights" && <Insights data={data} />}
           </main>
         </div>
       )}

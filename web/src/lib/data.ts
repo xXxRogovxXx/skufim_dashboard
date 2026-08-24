@@ -87,11 +87,38 @@ export interface Dataset {
   records: Record[];
   meta: Meta;
   demographics: Demographics | null;
+  insights: Insights | null;
+}
+
+// --- Инсайты (жанр×демо, дослушиваемость по сегментам, кросс пол×возраст) ---
+export interface SegComp {
+  name: string;
+  starts: number;
+  streams: number;
+  completion: number | null;
+  avg: number | null;
+}
+export interface GenreDemo {
+  starts: number;
+  gender: { name: string; starts: number }[];
+  age: { name: string; starts: number }[];
+}
+export interface Insights {
+  gender_order: string[];
+  age_order: string[];
+  genderAge: { gender: string; age: string; starts: number; streams: number }[];
+  completionByGender: SegComp[];
+  completionByAge: SegComp[];
+  genreDemographics: { [genre: string]: GenreDemo };
 }
 
 export async function loadDataset(): Promise<Dataset> {
   const base = import.meta.env.BASE_URL || "/";
-  const [records, meta, demographics] = await Promise.all([
+  const optional = (name: string) =>
+    fetch(`${base}data/${name}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+  const [records, meta, demographics, insights] = await Promise.all([
     fetch(`${base}data/records.json`).then((r) => {
       if (!r.ok) throw new Error(`records.json: ${r.status}`);
       return r.json();
@@ -100,14 +127,13 @@ export async function loadDataset(): Promise<Dataset> {
       if (!r.ok) throw new Error(`meta.json: ${r.status}`);
       return r.json();
     }),
-    // demographics.json может отсутствовать (старый экспорт) — не роняем дашборд
-    fetch(`${base}data/demographics.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .catch(() => null),
+    optional("demographics.json"),
+    optional("insights.json"),
   ]);
   return {
     records: records as Record[],
     meta: meta as Meta,
     demographics: demographics as Demographics | null,
+    insights: insights as Insights | null,
   };
 }
