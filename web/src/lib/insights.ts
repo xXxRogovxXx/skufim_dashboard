@@ -3,6 +3,23 @@ import type { Record as Rec, Meta } from "./data";
 import { sum, mean, median, groupBy, lifeCurve, daysToPercent } from "./agg";
 
 const col = (rows: Rec[], k: keyof Rec) => rows.map((r) => (r[k] as number) ?? 0);
+
+// Коэффициент корреляции Пирсона
+export function pearson(xs: number[], ys: number[]): number {
+  const n = Math.min(xs.length, ys.length);
+  if (n < 3) return 0;
+  const mx = mean(xs.slice(0, n)),
+    my = mean(ys.slice(0, n));
+  let num = 0,
+    dx = 0,
+    dy = 0;
+  for (let i = 0; i < n; i++) {
+    num += (xs[i] - mx) * (ys[i] - my);
+    dx += (xs[i] - mx) ** 2;
+    dy += (ys[i] - my) ** 2;
+  }
+  return dx && dy ? num / Math.sqrt(dx * dy) : 0;
+}
 const daysBetween = (a: string, b: string) =>
   Math.round((+new Date(b + "T00:00:00") - +new Date(a + "T00:00:00")) / 86400000);
 

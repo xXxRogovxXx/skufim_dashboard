@@ -334,6 +334,33 @@ body {
 }
 
 /* ------------------------------------------------
+   ВЫВОД под визуализацией
+------------------------------------------------ */
+.takeaway {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(56, 189, 248, 0.06));
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  border-left: 3px solid var(--accent-soft);
+  color: var(--text);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.takeaway__tag {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.74rem;
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 0.05rem;
+}
+
+/* ------------------------------------------------
    ТЕПЛОВАЯ КАРТА (heatmap)
 ------------------------------------------------ */
 .heatmap {
