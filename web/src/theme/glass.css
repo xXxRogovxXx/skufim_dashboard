@@ -867,12 +867,18 @@ table.data tbody tr:hover td {
   color: #fca5a5;
 }
 
-/* Recharts tooltip уже стилизуется в компонентах, оставляем чистый контейнер */
+/* Recharts tooltip — цвета зависят от темы (иначе в светлой теме тёмный текст
+   на тёмном фоне). Читаем переменные текущей темы. */
 .recharts-default-tooltip {
-  background: rgba(16, 14, 24, 0.92) !important;
-  border: 1px solid var(--glass-border) !important;
-  border-radius: 12px !important;
-  backdrop-filter: blur(10px);
+  background: var(--chart-tip-bg) !important;
+  border: 2px solid var(--chart-tip-border) !important;
+  border-radius: var(--chart-tip-radius) !important;
+  color: var(--chart-tip-text) !important;
+  box-shadow: var(--chart-tip-shadow);
+}
+.recharts-default-tooltip .recharts-tooltip-label,
+.recharts-default-tooltip .recharts-tooltip-item {
+  color: var(--chart-tip-text) !important;
 }
 
 /* Короткая подпись навигации — только на мобильных */
