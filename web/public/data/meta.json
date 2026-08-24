@@ -1707,7 +1707,7 @@
    "genre": "Сериал",
    "duration": "00:09:52",
    "category": "Детектив",
-   "release_date": null,
+   "release_date": "2026-08-20",
    "ref_release_date": "2026-08-19"
   },
   {
@@ -1717,8 +1717,38 @@
    "genre": "Игра",
    "duration": "00:51:49",
    "category": "Приключение",
-   "release_date": null,
+   "release_date": "2026-08-22",
    "ref_release_date": "2026-08-21"
+  },
+  {
+   "episode": "«Лаки»: мнение о криминальном мини-сериале с Аней Тейлор-Джой",
+   "short": "Лаки",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:14:27",
+   "category": "Криминал",
+   "release_date": null,
+   "ref_release_date": "2026-08-24"
+  },
+  {
+   "episode": "«Последний дом»: камерный постапокалиптический хоррор от Netflix",
+   "short": "Последний дом",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:31:36",
+   "category": "Фантастика",
+   "release_date": null,
+   "ref_release_date": "2026-08-26"
+  },
+  {
+   "episode": "«Ричер» 4 сезон: посмотрели первые серии экшен-триллера с железным Аланом Ричсоном",
+   "short": "Ричер 4",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:31:50",
+   "category": "Боевик",
+   "release_date": null,
+   "ref_release_date": "2026-06-28"
   }
  ],
  "formats": [
@@ -1734,9 +1764,9 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-08-19",
- "record_count": 19718,
- "episode_count": 172,
+ "date_max": "2026-08-23",
+ "record_count": 19892,
+ "episode_count": 175,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1751,6 +1781,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-08-20T21:53:43",
+ "generated_at": "2026-08-24T20:04:17",
  "version": 1
 }
