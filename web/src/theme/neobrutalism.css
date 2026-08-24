@@ -1,0 +1,296 @@
+/* Мгновенная смена темы без «залипания» переходов */
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+  animation-duration: 0.001ms !important;
+}
+
+/* ============================================================
+   ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ (работает в обеих темах)
+   ============================================================ */
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 300;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--glass-bg);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out);
+}
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--glass-border-hover);
+}
+@media (max-width: 720px) {
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 0.45rem 0.6rem;
+  }
+  .theme-toggle__label {
+    display: none;
+  }
+}
+
+/* ============================================================
+   СВЕТЛАЯ ТЕМА — НЕОБРУТАЛИЗМ
+   Плоские блоки, толстые чёрные рамки, жёсткие смещённые тени,
+   без блюра и градиентов, крупная типографика.
+   ============================================================ */
+:root[data-theme="light"] {
+  --bg: #f3efe4;
+  --text: #14110b;
+  --text-muted: #4f493d;
+  --text-faint: #786f60;
+  --accent: #6d28d9;
+  --accent-soft: #6d28d9;
+
+  --glass-bg: #ffffff;
+  --glass-bg-strong: #ffffff;
+  --glass-border: #14110b;
+  --glass-border-hover: #14110b;
+  --glass-blur: 0px;
+  --glass-highlight: transparent;
+  --glass-shadow: 5px 5px 0 #14110b;
+  --glass-shadow-hover: 8px 8px 0 #14110b;
+
+  --radius-lg: 10px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+
+  --field-bg: #ffffff;
+  --field-bg-hover: #ffe89e;
+
+  --chart-grid: rgba(20, 17, 11, 0.12);
+  --chart-axis: #14110b;
+  --chart-tick: #4f493d;
+  --chart-label: #14110b;
+  --chart-tip-bg: #fffdf3;
+  --chart-tip-border: #14110b;
+  --chart-tip-text: #14110b;
+  --chart-tip-radius: 4px;
+  --chart-tip-shadow: 4px 4px 0 #14110b;
+}
+
+/* Толстые рамки на поверхностях и контролах */
+:root[data-theme="light"] .glass,
+:root[data-theme="light"] .section,
+:root[data-theme="light"] .kpi,
+:root[data-theme="light"] .sidebar,
+:root[data-theme="light"] select,
+:root[data-theme="light"] input[type="date"],
+:root[data-theme="light"] button.seg,
+:root[data-theme="light"] .gate-card,
+:root[data-theme="light"] .gate-input,
+:root[data-theme="light"] .theme-toggle {
+  border-width: 2.5px !important;
+  border-style: solid;
+  border-color: #14110b;
+  backdrop-filter: none !important;
+}
+
+:root[data-theme="light"] .kpi,
+:root[data-theme="light"] .verdict,
+:root[data-theme="light"] .info-block,
+:root[data-theme="light"] .takeaway,
+:root[data-theme="light"] .map-tooltip {
+  background: #ffffff;
+  border: 2.5px solid #14110b;
+  box-shadow: 4px 4px 0 #14110b;
+}
+:root[data-theme="light"] .theme-toggle {
+  border-radius: 8px;
+  background: #ffd400;
+  color: #14110b;
+}
+
+/* Ховер — «подъём» со сдвигом тени */
+:root[data-theme="light"] .glass--hover:hover,
+:root[data-theme="light"] .kpi.glass--hover:hover,
+:root[data-theme="light"] .theme-toggle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #14110b;
+}
+
+/* Заголовки и цифры — плоский чёрный, без градиента */
+:root[data-theme="light"] .page-title {
+  background: none;
+  -webkit-text-fill-color: #14110b;
+  color: #14110b;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+:root[data-theme="light"] .kpi__value {
+  background: none;
+  -webkit-text-fill-color: #14110b;
+  color: #14110b;
+}
+:root[data-theme="light"] .page-sub,
+:root[data-theme="light"] .section-title {
+  color: #14110b;
+}
+:root[data-theme="light"] .section-title {
+  font-weight: 800;
+}
+:root[data-theme="light"] .kpi__top {
+  background: var(--accent);
+}
+
+/* Поля ввода и селекты */
+:root[data-theme="light"] select,
+:root[data-theme="light"] input[type="date"] {
+  box-shadow: 3px 3px 0 #14110b;
+  color: #14110b;
+  color-scheme: light;
+}
+:root[data-theme="light"] select:focus,
+:root[data-theme="light"] input[type="date"]:focus {
+  box-shadow: 4px 4px 0 var(--accent);
+}
+:root[data-theme="light"] select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2314110b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+}
+:root[data-theme="light"] select option {
+  background: #ffffff;
+  color: #14110b;
+}
+
+/* Сегменты / активные кнопки */
+:root[data-theme="light"] button.seg {
+  box-shadow: 3px 3px 0 #14110b;
+}
+:root[data-theme="light"] button.seg:hover {
+  background: var(--field-bg-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #14110b;
+}
+:root[data-theme="light"] button.seg.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: #14110b;
+  box-shadow: 3px 3px 0 #14110b;
+}
+
+/* Навигация — блоки с рамкой */
+:root[data-theme="light"] .nav-item {
+  border: 2.5px solid transparent;
+  font-weight: 700;
+}
+:root[data-theme="light"] .nav-item:hover {
+  background: #fff;
+  border-color: #14110b;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #14110b;
+}
+:root[data-theme="light"] .nav-item.active {
+  background: #ffd400;
+  color: #14110b;
+  border-color: #14110b;
+  box-shadow: 4px 4px 0 #14110b;
+}
+:root[data-theme="light"] .nav-item.active::before {
+  display: none;
+}
+
+/* Кнопка входа */
+:root[data-theme="light"] .gate-btn {
+  background: var(--accent);
+  color: #fff;
+  border: 2.5px solid #14110b;
+  box-shadow: 4px 4px 0 #14110b;
+}
+:root[data-theme="light"] .gate-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #14110b;
+}
+
+/* Вывод (takeaway) */
+:root[data-theme="light"] .takeaway {
+  background: #fff6cc;
+  border: 2.5px solid #14110b;
+  border-left: 6px solid var(--accent);
+  box-shadow: 4px 4px 0 #14110b;
+  color: #14110b;
+}
+:root[data-theme="light"] .takeaway__tag {
+  color: var(--accent);
+}
+
+/* Hint */
+:root[data-theme="light"] .hint {
+  background: #eef7ff;
+  border: 2px solid #14110b;
+  color: #14110b;
+}
+
+/* Значки, легенды, таблицы */
+:root[data-theme="light"] .badge {
+  border: 2px solid #14110b;
+}
+:root[data-theme="light"] .donut-legend__val,
+:root[data-theme="light"] .kpi__label,
+:root[data-theme="light"] .control-label,
+:root[data-theme="light"] .demo-subtitle {
+  color: #14110b;
+}
+:root[data-theme="light"] table.data th {
+  background: #ffe89e;
+  color: #14110b;
+  border-bottom: 2.5px solid #14110b;
+}
+:root[data-theme="light"] table.data td:first-child,
+:root[data-theme="light"] table.data th:first-child {
+  background: #fff;
+  backdrop-filter: none;
+}
+:root[data-theme="light"] table.data td {
+  border-bottom: 1.5px solid rgba(20, 17, 11, 0.15);
+}
+
+/* Тепловая карта */
+:root[data-theme="light"] .heatmap__cell {
+  border: 2px solid #14110b;
+  border-radius: 6px;
+}
+:root[data-theme="light"] .heatmap__rowhead,
+:root[data-theme="light"] .heatmap__colhead {
+  color: #14110b;
+  font-weight: 700;
+}
+:root[data-theme="light"] .verdict .value {
+  color: #14110b;
+}
+
+/* Aurora → плоский кремовый фон с точечной сеткой */
+:root[data-theme="light"] .aurora {
+  background: #f3efe4;
+  background-image: radial-gradient(rgba(20, 17, 11, 0.14) 1.4px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+:root[data-theme="light"] .aurora__blob,
+:root[data-theme="light"] .aurora__grain {
+  display: none;
+}
+
+:root[data-theme="light"] .sidebar__brand {
+  color: #14110b;
+}
+:root[data-theme="light"] ::selection {
+  background: #ffd400;
+  color: #14110b;
+}

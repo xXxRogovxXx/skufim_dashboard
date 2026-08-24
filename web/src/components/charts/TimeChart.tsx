@@ -11,14 +11,7 @@ import {
   ReferenceLine,
   ResponsiveContainer,
 } from "recharts";
-import {
-  AXIS_STYLE,
-  GRID_STYLE,
-  TOOLTIP_STYLE,
-  GradientDefs,
-  ChartFrame,
-  compactNumber,
-} from "./common";
+import { chartStyles, GradientDefs, ChartFrame, compactNumber } from "./common";
 import { formatDateRu } from "../../lib/format";
 
 export interface Mark {
@@ -68,6 +61,7 @@ export default function TimeChart({
   vRefs = [],
   hRefs = [],
 }: Props) {
+  const T = chartStyles();
   const hasRight = marks.some((m) => m.yAxis === "right");
   const gradIds = marks
     .filter((m) => m.type === "area")
@@ -78,20 +72,20 @@ export default function TimeChart({
       <ResponsiveContainer>
         <ComposedChart data={data} margin={{ top: 10, right: hasRight ? 12 : 8, left: 0, bottom: 4 }}>
           <GradientDefs ids={gradIds} />
-          <CartesianGrid {...GRID_STYLE} vertical={false} />
+          <CartesianGrid {...T.grid} vertical={false} />
           <XAxis
             dataKey={xKey}
-            {...AXIS_STYLE}
+            {...T.axis}
             tickFormatter={xType === "date" ? (v) => formatDateRu(v).slice(0, 5) : undefined}
             minTickGap={20}
           />
           <YAxis
             yAxisId="left"
-            {...AXIS_STYLE}
+            {...T.axis}
             tickFormatter={compactNumber}
             label={
               leftLabel
-                ? { value: leftLabel, angle: -90, position: "insideLeft", fill: "#71717a", fontSize: 11 }
+                ? { value: leftLabel, angle: -90, position: "insideLeft", fill: T.tick, fontSize: 11 }
                 : undefined
             }
           />
@@ -99,21 +93,21 @@ export default function TimeChart({
             <YAxis
               yAxisId="right"
               orientation="right"
-              {...AXIS_STYLE}
+              {...T.axis}
               domain={rightDomain}
               tickFormatter={compactNumber}
               label={
                 rightLabel
-                  ? { value: rightLabel, angle: 90, position: "insideRight", fill: "#71717a", fontSize: 11 }
+                  ? { value: rightLabel, angle: 90, position: "insideRight", fill: T.tick, fontSize: 11 }
                   : undefined
               }
             />
           )}
           <Tooltip
-            {...TOOLTIP_STYLE}
+            {...T.tooltip}
             labelFormatter={(v) => (xType === "date" ? formatDateRu(String(v)) : `День ${v}`)}
           />
-          <Legend wrapperStyle={{ fontSize: 12, color: "#a1a1aa" }} />
+          <Legend wrapperStyle={{ fontSize: 12, color: T.label }} />
 
           {hRefs.map((r, i) => (
             <ReferenceLine

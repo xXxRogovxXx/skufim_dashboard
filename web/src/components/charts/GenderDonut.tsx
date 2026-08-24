@@ -1,5 +1,5 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
-import { TOOLTIP_STYLE, compactNumber } from "./common";
+import { chartStyles, compactNumber } from "./common";
 import type { DemoDim } from "../../lib/data";
 
 // Цвета по полу: мужчины — голубой, женщины — розовый, не определён — серый
@@ -20,6 +20,7 @@ export default function GenderDonut({ data, metric, height = 300 }: Props) {
     .map((d) => ({ name: d.name, value: d[metric] }))
     .filter((d) => d.value > 0);
   const total = rows.reduce((s, d) => s + d.value, 0);
+  const T = chartStyles();
 
   if (total === 0) {
     return <div className="chart-empty">Нет данных</div>;
@@ -46,7 +47,7 @@ export default function GenderDonut({ data, metric, height = 300 }: Props) {
             ))}
           </Pie>
           <Tooltip
-            {...TOOLTIP_STYLE}
+            {...T.tooltip}
             formatter={(v: number, n: string) => [
               `${compactNumber(v)} (${((v / total) * 100).toFixed(1)}%)`,
               n,
@@ -57,7 +58,7 @@ export default function GenderDonut({ data, metric, height = 300 }: Props) {
             x="50%"
             y="46%"
             textAnchor="middle"
-            style={{ fill: "#fafafa", fontSize: 26, fontWeight: 700 }}
+            style={{ fill: T.text, fontSize: 26, fontWeight: 700 }}
           >
             {compactNumber(total)}
           </text>
@@ -65,7 +66,7 @@ export default function GenderDonut({ data, metric, height = 300 }: Props) {
             x="50%"
             y="57%"
             textAnchor="middle"
-            style={{ fill: "#a1a1aa", fontSize: 11, letterSpacing: "0.08em" }}
+            style={{ fill: T.label, fontSize: 11, letterSpacing: "0.08em" }}
           >
             {metric === "starts" ? "СТАРТОВ" : "СТРИМОВ"}
           </text>

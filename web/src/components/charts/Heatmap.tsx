@@ -53,7 +53,7 @@ export default function Heatmap({
                   key={`${r}-${c}`}
                   className="heatmap__cell"
                   style={{
-                    background: matrix[r][c] > 0 ? auroraScale(t) : "rgba(255,255,255,0.03)",
+                    background: matrix[r][c] > 0 ? auroraScale(t) : "rgba(128,128,128,0.10)",
                     color: t > 0.55 ? "#0b0b12" : "#e8e8ef",
                   }}
                   title={`${rname} · ${cols[c]}: ${matrix[r][c]}`}

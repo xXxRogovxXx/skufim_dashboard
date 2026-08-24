@@ -7,8 +7,10 @@ import Episode from "./pages/Episode";
 import Compare from "./pages/Compare";
 import Insights from "./pages/Insights";
 import { loadDataset, type Dataset } from "./lib/data";
+import { useTheme } from "./theme/theme";
 
 export default function App() {
+  const { theme } = useTheme();
   const [page, setPage] = useState<PageId>("overview");
   const [data, setData] = useState<Dataset | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +33,7 @@ export default function App() {
       ) : (
         <div className="app">
           <Sidebar page={page} onChange={setPage} importantDates={data.meta.important_dates} />
-          <main className="main">
+          <main className="main" key={theme}>
             {page === "overview" && <Overview data={data} />}
             {page === "episode" && <Episode data={data} />}
             {page === "compare" && <Compare data={data} />}

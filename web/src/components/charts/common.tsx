@@ -1,28 +1,36 @@
 import type { ReactNode } from "react";
-import { COLORS } from "../../theme/tokens";
 
-export const AXIS_STYLE = {
-  stroke: "rgba(255,255,255,0.12)",
-  tick: { fill: COLORS.textFaint, fontSize: 11 },
-};
-
-export const GRID_STYLE = {
-  stroke: COLORS.grid,
-  strokeDasharray: "3 3",
-};
-
-export const TOOLTIP_STYLE = {
-  contentStyle: {
-    background: "rgba(16,14,24,0.94)",
-    border: "1px solid rgba(255,255,255,0.14)",
-    borderRadius: 12,
-    color: COLORS.text,
-    fontSize: 12,
-    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-  },
-  labelStyle: { color: COLORS.textMuted, marginBottom: 4 },
-  itemStyle: { color: COLORS.text },
-};
+// Стили осей/сетки/тултипа, читаемые из CSS-переменных текущей темы.
+// Графики перемонтируются при смене темы (key на <main>), поэтому пересчитываются.
+function cssv(name: string, fallback: string): string {
+  if (typeof document === "undefined") return fallback;
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  return v || fallback;
+}
+export function chartStyles() {
+  const tick = cssv("--chart-tick", "#71717a");
+  const label = cssv("--chart-label", "#a1a1aa");
+  const tipText = cssv("--chart-tip-text", "#fafafa");
+  return {
+    label,
+    tick,
+    text: cssv("--text", "#fafafa"),
+    axis: { stroke: cssv("--chart-axis", "rgba(255,255,255,0.12)"), tick: { fill: tick, fontSize: 11 } },
+    grid: { stroke: cssv("--chart-grid", "rgba(255,255,255,0.05)"), strokeDasharray: "3 3" },
+    tooltip: {
+      contentStyle: {
+        background: cssv("--chart-tip-bg", "rgba(16,14,24,0.94)"),
+        border: `2px solid ${cssv("--chart-tip-border", "rgba(255,255,255,0.14)")}`,
+        borderRadius: parseInt(cssv("--chart-tip-radius", "12px")) || 12,
+        color: tipText,
+        fontSize: 12,
+        boxShadow: cssv("--chart-tip-shadow", "0 10px 30px rgba(0,0,0,0.5)"),
+      },
+      labelStyle: { color: tick, marginBottom: 4 },
+      itemStyle: { color: tipText },
+    },
+  };
+}
 
 // Брендовая последовательная шкала (aurora): фиолетовый → голубой → изумрудный → лайм.
 // Заменяет клиническую viridis, чтобы графики читались премиально на тёмном стекле.

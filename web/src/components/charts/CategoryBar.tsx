@@ -9,7 +9,7 @@ import {
   LabelList,
   ResponsiveContainer,
 } from "recharts";
-import { AXIS_STYLE, GRID_STYLE, TOOLTIP_STYLE, ChartFrame, compactNumber, auroraScale } from "./common";
+import { chartStyles, ChartFrame, compactNumber, auroraScale } from "./common";
 import { SERIES_PALETTE } from "../../theme/tokens";
 
 interface Props {
@@ -35,6 +35,7 @@ export default function CategoryBar({
   valueFormatter = compactNumber,
   gradientByValue = false,
 }: Props) {
+  const T = chartStyles();
   const values = data.map((d) => d[valueKey] as number);
   const max = Math.max(...values, 1);
   const min = Math.min(...values, 0);
@@ -54,16 +55,16 @@ export default function CategoryBar({
           layout={horizontal ? "vertical" : "horizontal"}
           margin={{ top: 8, right: horizontal ? 44 : 12, left: horizontal ? 8 : 0, bottom: 8 }}
         >
-          <CartesianGrid {...GRID_STYLE} horizontal={!horizontal} vertical={horizontal} />
+          <CartesianGrid {...T.grid} horizontal={!horizontal} vertical={horizontal} />
           {horizontal ? (
             <>
-              <XAxis type="number" {...AXIS_STYLE} tickFormatter={compactNumber} />
+              <XAxis type="number" {...T.axis} tickFormatter={compactNumber} />
               <YAxis
                 type="category"
                 dataKey={labelKey}
-                {...AXIS_STYLE}
+                {...T.axis}
                 width={130}
-                tick={{ fill: "#a1a1aa", fontSize: 10 }}
+                tick={{ fill: T.label, fontSize: 10 }}
               />
             </>
           ) : (
@@ -71,17 +72,17 @@ export default function CategoryBar({
               <XAxis
                 type="category"
                 dataKey={labelKey}
-                {...AXIS_STYLE}
+                {...T.axis}
                 interval={0}
                 angle={data.length > 5 ? -20 : 0}
                 textAnchor={data.length > 5 ? "end" : "middle"}
                 height={data.length > 5 ? 60 : 30}
-                tick={{ fill: "#a1a1aa", fontSize: 10 }}
+                tick={{ fill: T.label, fontSize: 10 }}
               />
-              <YAxis type="number" {...AXIS_STYLE} tickFormatter={compactNumber} />
+              <YAxis type="number" {...T.axis} tickFormatter={compactNumber} />
             </>
           )}
-          <Tooltip {...TOOLTIP_STYLE} formatter={(v: number) => valueFormatter(v)} cursor={{ fill: "rgba(255,255,255,0.04)" }} />
+          <Tooltip {...T.tooltip} formatter={(v: number) => valueFormatter(v)} cursor={{ fill: "rgba(255,255,255,0.04)" }} />
           <Bar dataKey={valueKey} radius={horizontal ? [0, 6, 6, 0] : [6, 6, 0, 0]}>
             {data.map((d, i) => (
               <Cell key={i} fill={cellColor(d, i)} />
@@ -90,7 +91,7 @@ export default function CategoryBar({
               dataKey={valueKey}
               position={horizontal ? "right" : "top"}
               formatter={(v: number) => valueFormatter(v)}
-              style={{ fill: "#a1a1aa", fontSize: 10 }}
+              style={{ fill: T.label, fontSize: 10 }}
             />
           </Bar>
         </BarChart>

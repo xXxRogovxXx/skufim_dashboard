@@ -61,12 +61,12 @@ export default function CityMap({ points, metric, height = 460 }: Props) {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill="rgba(255,255,255,0.035)"
-                  stroke="rgba(255,255,255,0.10)"
+                  fill="rgba(128,128,128,0.10)"
+                  stroke="rgba(128,128,128,0.30)"
                   strokeWidth={0.4}
                   style={{
                     default: { outline: "none" },
-                    hover: { outline: "none", fill: "rgba(255,255,255,0.06)" },
+                    hover: { outline: "none", fill: "rgba(128,128,128,0.20)" },
                     pressed: { outline: "none" },
                   }}
                 />

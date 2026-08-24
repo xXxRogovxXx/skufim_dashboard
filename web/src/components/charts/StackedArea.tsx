@@ -8,7 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { AXIS_STYLE, GRID_STYLE, TOOLTIP_STYLE, ChartFrame, compactNumber } from "./common";
+import { chartStyles, ChartFrame, compactNumber } from "./common";
 import { SERIES_PALETTE } from "../../theme/tokens";
 
 interface Props {
@@ -19,6 +19,7 @@ interface Props {
 }
 
 export default function StackedArea({ data, xKey, keys, height = 340 }: Props) {
+  const T = chartStyles();
   return (
     <ChartFrame height={height}>
       <ResponsiveContainer>
@@ -31,10 +32,10 @@ export default function StackedArea({ data, xKey, keys, height = 340 }: Props) {
               </linearGradient>
             ))}
           </defs>
-          <CartesianGrid {...GRID_STYLE} vertical={false} />
-          <XAxis dataKey={xKey} {...AXIS_STYLE} tick={{ fill: "#a1a1aa", fontSize: 10 }} />
-          <YAxis {...AXIS_STYLE} tickFormatter={compactNumber} />
-          <Tooltip {...TOOLTIP_STYLE} formatter={(v: number) => compactNumber(v)} />
+          <CartesianGrid {...T.grid} vertical={false} />
+          <XAxis dataKey={xKey} {...T.axis} tick={{ fill: T.label, fontSize: 10 }} />
+          <YAxis {...T.axis} tickFormatter={compactNumber} />
+          <Tooltip {...T.tooltip} formatter={(v: number) => compactNumber(v)} />
           <Legend wrapperStyle={{ fontSize: 11 }} />
           {keys.map((k, i) => (
             <Area

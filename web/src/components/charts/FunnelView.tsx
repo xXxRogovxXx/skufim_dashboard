@@ -1,4 +1,5 @@
 import { formatNumber } from "../../lib/format";
+import { chartStyles } from "./common";
 
 export interface Stage {
   label: string;
@@ -14,6 +15,7 @@ interface Props {
 
 // Воронка: центрированные сужающиеся полосы (dashboard.py plot_funnel).
 export default function FunnelView({ stages, color = "#7C3AED", compact = false }: Props) {
+  const T = chartStyles();
   const max = Math.max(...stages.map((s) => s.value), 1);
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: compact ? 8 : 12, padding: "0.4rem 0" }}>
@@ -40,9 +42,9 @@ export default function FunnelView({ stages, color = "#7C3AED", compact = false 
             >
               {formatNumber(s.value)}
             </div>
-            <div style={{ color: "#a1a1aa", fontSize: compact ? "0.66rem" : "0.75rem", marginTop: 4 }}>
+            <div style={{ color: T.label, fontSize: compact ? "0.66rem" : "0.75rem", marginTop: 4 }}>
               {s.label}
-              {s.caption && <span style={{ color: "#71717a" }}> · {s.caption}</span>}
+              {s.caption && <span style={{ color: T.tick }}> · {s.caption}</span>}
             </div>
           </div>
         );
