@@ -1727,7 +1727,7 @@
    "genre": "Сериал",
    "duration": "00:14:27",
    "category": "Криминал",
-   "release_date": null,
+   "release_date": "2026-08-25",
    "ref_release_date": "2026-08-24"
   },
   {
@@ -1737,7 +1737,7 @@
    "genre": "Сериал",
    "duration": "00:31:36",
    "category": "Фантастика",
-   "release_date": null,
+   "release_date": "2026-08-27",
    "ref_release_date": "2026-08-26"
   },
   {
@@ -1747,7 +1747,7 @@
    "genre": "Сериал",
    "duration": "00:31:50",
    "category": "Боевик",
-   "release_date": null,
+   "release_date": "2026-08-29",
    "ref_release_date": "2026-06-28"
   },
   {
@@ -1759,6 +1759,36 @@
    "category": "Сводный",
    "release_date": "2025-04-07",
    "ref_release_date": "2025-04-07"
+  },
+  {
+   "episode": "«Человек паук: Новый день»: делимся впечатлениями о главном супергеройском блокбастере лета",
+   "short": "Человек-Паук 4",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "01:03:43",
+   "category": "Супергероика",
+   "release_date": null,
+   "ref_release_date": "2026-08-31"
+  },
+  {
+   "episode": "Летние DLC: какими получились дополнения к Doom, Mafia, The Alters, Reanimal",
+   "short": "4 DLC's",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:32:14",
+   "category": "Сводный",
+   "release_date": null,
+   "ref_release_date": "2026-09-02"
+  },
+  {
+   "episode": "System Shock Remake: знакомство с прародителем Immersive Sim в обличье ремейка",
+   "short": "System Shock Remake",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:09:06",
+   "category": "Шутер",
+   "release_date": null,
+   "ref_release_date": "2026-09-04"
   }
  ],
  "formats": [
@@ -1774,9 +1804,9 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-08-24",
- "record_count": 19940,
- "episode_count": 176,
+ "date_max": "2026-08-30",
+ "record_count": 20230,
+ "episode_count": 179,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1791,6 +1821,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-08-26T22:43:26",
+ "generated_at": "2026-09-01T10:56:25",
  "version": 1
 }
