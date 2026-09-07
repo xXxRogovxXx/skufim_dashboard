@@ -39,15 +39,21 @@ def _path(name):
 
 
 def _load_demographics_df():
-    """Единый df (episode, gender, age, city, starts, streams) из любого формата."""
-    if os.path.exists(_path(STARTS_FILE)) and os.path.exists(_path(STREAMS_FILE)):
-        return _load_pair()
+    """Единый df (episode, gender, age, city, starts, streams) из любого формата.
+
+    Приоритет — демография ВНУТРИ Общая.xlsx: именно её обновляют при каждом
+    deploy.bat, поэтому география и половозрастная всегда свежие. Отдельные
+    Старты.xlsx/Стримы.xlsx используются только как запасной вариант, если в
+    Общая.xlsx нет колонок Пол/Возраст/Город.
+    """
     if os.path.exists(_path(GENERAL_FILE)):
         df = _load_from_general()
         if df is not None:
             return df
+    if os.path.exists(_path(STARTS_FILE)) and os.path.exists(_path(STREAMS_FILE)):
+        return _load_pair()
     raise FileNotFoundError(
-        "нет демографии: ни Старты.xlsx/Стримы.xlsx, ни колонок Пол/Возраст/Город в Общая.xlsx"
+        "нет демографии: ни колонок Пол/Возраст/Город в Общая.xlsx, ни Старты.xlsx/Стримы.xlsx"
     )
 
 
