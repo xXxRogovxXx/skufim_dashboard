@@ -345,6 +345,74 @@ body {
 }
 
 /* ------------------------------------------------
+   ПУЛЬС: health-score, KPI-дельты
+------------------------------------------------ */
+.kpi__delta {
+  margin-top: 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.health {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+.health__score {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.health__max {
+  font-size: 1.2rem;
+  color: var(--text-faint);
+  font-weight: 600;
+}
+.health__body {
+  flex: 1;
+  min-width: 240px;
+}
+.health__label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.health-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+}
+.health-bar__label {
+  width: 130px;
+  color: var(--text-muted);
+}
+.health-bar__track {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  overflow: hidden;
+}
+.health-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+}
+.health-bar__val {
+  width: 26px;
+  text-align: right;
+  color: var(--text);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------
    ВЫВОД под визуализацией
 ------------------------------------------------ */
 .takeaway {

@@ -6,6 +6,7 @@ import Overview from "./pages/Overview";
 import Episode from "./pages/Episode";
 import Compare from "./pages/Compare";
 import Insights from "./pages/Insights";
+import Pulse from "./pages/Pulse";
 import { loadDataset, type Dataset } from "./lib/data";
 import { useTheme } from "./theme/theme";
 
@@ -38,6 +39,7 @@ export default function App() {
             {page === "episode" && <Episode data={data} />}
             {page === "compare" && <Compare data={data} />}
             {page === "insights" && <Insights data={data} />}
+            {page === "pulse" && <Pulse data={data} />}
           </main>
         </div>
       )}

@@ -287,6 +287,16 @@
   display: none;
 }
 
+/* Пульс: полоски индекса здоровья */
+:root[data-theme="light"] .health-bar__track {
+  background: #f3efe4;
+  border: 2px solid #14110b;
+  height: 12px;
+}
+:root[data-theme="light"] .health-bar__fill {
+  background: var(--accent);
+}
+
 :root[data-theme="light"] .sidebar__brand {
   color: #14110b;
 }

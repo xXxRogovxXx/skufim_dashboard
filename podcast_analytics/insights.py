@@ -12,6 +12,9 @@ from .loader import _path, apply_aliases
 GENDER_ORDER = ["Мужчины", "Женщины", "Не определен"]
 AGE_ORDER = ["0-17", "18-24", "25-34", "35-44", "45-54", "55-99", "Не определен"]
 
+# Середины возрастных групп — для расчёта среднего возраста
+AGE_MID = {"0-17": 12, "18-24": 21, "25-34": 29, "35-44": 39, "45-54": 49, "55-99": 65}
+
 
 def _read():
     df = apply_aliases(pd.read_excel(_path("Общая.xlsx"), sheet_name="Общая"))
@@ -80,6 +83,25 @@ def build_insights():
                 "age": dist("Возраст", AGE_ORDER),
             }
 
+    # Демография во времени — доля женщин и средний возраст по месяцам
+    demo_time = []
+    if "Дата прослушивания" in df.columns:
+        d = df.copy()
+        d["month"] = pd.to_datetime(d["Дата прослушивания"]).dt.to_period("M").astype(str)
+        d["mid"] = d["Возраст"].map(AGE_MID)
+        for month, sub in d.groupby("month"):
+            women = int(sub.loc[sub["Пол"] == "Женщины", "Старты"].sum())
+            men = int(sub.loc[sub["Пол"] == "Мужчины", "Старты"].sum())
+            aged = sub.dropna(subset=["mid"])
+            wsum = aged["Старты"].sum()
+            avg_age = float((aged["mid"] * aged["Старты"]).sum() / wsum) if wsum else None
+            demo_time.append({
+                "month": month,
+                "womenShare": round(women / (women + men) * 100, 1) if (women + men) else None,
+                "avgAge": round(avg_age, 1) if avg_age else None,
+                "starts": int(sub["Старты"].sum()),
+            })
+
     return {
         "gender_order": GENDER_ORDER,
         "age_order": AGE_ORDER,
@@ -87,4 +109,5 @@ def build_insights():
         "completionByGender": completion_by_gender,
         "completionByAge": completion_by_age,
         "genreDemographics": genre_demo,
+        "demographicsOverTime": demo_time,
     }

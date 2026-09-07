@@ -110,6 +110,12 @@ export interface Insights {
   completionByGender: SegComp[];
   completionByAge: SegComp[];
   genreDemographics: { [genre: string]: GenreDemo };
+  demographicsOverTime?: {
+    month: string;
+    womenShare: number | null;
+    avgAge: number | null;
+    starts: number;
+  }[];
 }
 
 export async function loadDataset(): Promise<Dataset> {
