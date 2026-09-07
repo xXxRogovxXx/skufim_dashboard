@@ -29,9 +29,9 @@ GENERAL_SHEET = "Общая"
 GENDER_ORDER = ["Женщины", "Мужчины", "Не определен"]
 AGE_ORDER = ["0-17", "18-24", "25-34", "35-44", "45-54", "55-99", "Не определен"]
 
-# Сколько городов отдавать в JSON
-CITY_TOP_OVERALL = 120
-CITY_TOP_EPISODE = 40
+# Сколько городов отдавать в JSON (после роста покрытия показываем больше точек)
+CITY_TOP_OVERALL = 500
+CITY_TOP_EPISODE = 60
 
 
 def _path(name):

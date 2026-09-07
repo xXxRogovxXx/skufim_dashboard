@@ -86,9 +86,9 @@ export default function DemographicsSection({ scope }: { scope: DemoScope }) {
         </Hint>
         <CityMap points={city.points} metric={metric} />
         <div className="coverage-note">
-          На карте — {compactNumber(mapped)} из {compactNumber(total)} (
-          {coverage}% аудитории с распознанным городом; регионы и страны без
-          точной точки на карте не показаны).
+          На карте — {compactNumber(mapped)} из {compactNumber(total)} ({coverage}%
+          аудитории). Регионы, округа и страны показаны в своём центре/столице;
+          вне карты остаются лишь сёла, районы и редкие зарубежные городки.
         </div>
       </GlassCard>
     </>

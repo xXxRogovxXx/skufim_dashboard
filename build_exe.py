@@ -57,6 +57,9 @@ PyInstaller.__main__.run([
     *icon_args,
     # фронтенд внутрь exe как 'web_dist' (без данных разработчика)
     "--add-data", f"{STAGE}{os.pathsep}web_dist",
+    # справочник городов РФ (нужен geo.py для координат на карте)
+    "--add-data", f"{os.path.join(ROOT, 'podcast_analytics', 'data', 'ru_cities.json')}"
+                  f"{os.pathsep}podcast_analytics/data",
     # надёжно тянем пакеты
     "--collect-submodules", "podcast_analytics",
     "--collect-all", "openpyxl",
