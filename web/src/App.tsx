@@ -7,6 +7,7 @@ import Episode from "./pages/Episode";
 import Compare from "./pages/Compare";
 import Insights from "./pages/Insights";
 import Pulse from "./pages/Pulse";
+import Predict from "./pages/Predict";
 import { loadDataset, type Dataset } from "./lib/data";
 import { useTheme } from "./theme/theme";
 
@@ -40,6 +41,7 @@ export default function App() {
             {page === "compare" && <Compare data={data} />}
             {page === "insights" && <Insights data={data} />}
             {page === "pulse" && <Pulse data={data} />}
+            {page === "predict" && <Predict data={data} />}
           </main>
         </div>
       )}

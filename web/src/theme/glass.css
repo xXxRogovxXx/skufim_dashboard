@@ -1169,3 +1169,78 @@ table.data tbody tr:hover td {
     font-size: 1.7rem;
   }
 }
+
+/* ------------------------------------------------
+   ПРОГНОЗ ВЫПУСКА
+------------------------------------------------ */
+.pred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 1.1rem;
+}
+.pred-card {
+  position: relative;
+  padding: 1.15rem 1rem 1rem;
+  text-align: center;
+  overflow: hidden;
+  animation: popIn 0.5s var(--ease-out) both;
+}
+.pred-card__top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0.85;
+}
+.pred-card__label {
+  color: var(--text-faint);
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.pred-card__value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 0.3rem 0 0.15rem;
+  font-variant-numeric: tabular-nums;
+}
+.pred-card__range {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.pred-card__delta {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.pred-conf {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 0.2rem;
+}
+.pred-conf__badge {
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1.5px solid;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.pred-conf__meta {
+  color: var(--text-faint);
+  font-size: 0.74rem;
+  font-variant-numeric: tabular-nums;
+}
+input[type="range"] {
+  accent-color: var(--accent);
+  cursor: pointer;
+  margin-top: 0.35rem;
+}

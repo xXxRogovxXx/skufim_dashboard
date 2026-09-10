@@ -1,7 +1,7 @@
 import type { ImportantDate } from "../lib/data";
 import { formatDateRu } from "../lib/format";
 
-export type PageId = "overview" | "episode" | "compare" | "insights" | "pulse";
+export type PageId = "overview" | "episode" | "compare" | "insights" | "pulse" | "predict";
 
 const NAV: { id: PageId; icon: string; label: string; short: string }[] = [
   { id: "overview", icon: "📊", label: "Общая аналитика", short: "Общая" },
@@ -9,6 +9,7 @@ const NAV: { id: PageId; icon: string; label: string; short: string }[] = [
   { id: "compare", icon: "🔄", label: "Сравнение выпусков", short: "Сравнить" },
   { id: "insights", icon: "🔬", label: "Инсайты", short: "Инсайты" },
   { id: "pulse", icon: "📡", label: "Пульс", short: "Пульс" },
+  { id: "predict", icon: "🔮", label: "Прогноз выпуска", short: "Прогноз" },
 ];
 
 interface Props {
