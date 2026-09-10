@@ -1789,6 +1789,16 @@
    "category": "Шутер",
    "release_date": "2026-09-05",
    "ref_release_date": "2026-09-04"
+  },
+  {
+   "episode": "«Лучше звоните Солу»: сквозь сомнения – к восхищению",
+   "short": "Лучше звоните Солу",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:10:09",
+   "category": "Криминал",
+   "release_date": "2026-09-07",
+   "ref_release_date": "2026-09-07"
   }
  ],
  "formats": [
@@ -1804,9 +1814,9 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-09-05",
- "record_count": 20431,
- "episode_count": 179,
+ "date_max": "2026-09-08",
+ "record_count": 20543,
+ "episode_count": 180,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1821,6 +1831,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-09-07T14:32:56",
+ "generated_at": "2026-09-10T19:34:52",
  "version": 1
 }
