@@ -1799,6 +1799,36 @@
    "category": "Криминал",
    "release_date": "2026-09-07",
    "ref_release_date": "2026-09-07"
+  },
+  {
+   "episode": "Orbitals / Nintendo Direct: обсуждаем кооперативное приключение и самые яркие игры выставки",
+   "short": "Orbitals / Nintendo Direct",
+   "format": "Новый",
+   "genre": "Сводный",
+   "duration": "00:59:36",
+   "category": "Спецвыпуск",
+   "release_date": null,
+   "ref_release_date": "2026-09-14"
+  },
+  {
+   "episode": "Star Wars: Zero Company: впечатления от первой стратегии во вселенной ЗВ в духе XCOM",
+   "short": "Star Wars: Zero Company",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:28:46",
+   "category": "Фантастика",
+   "release_date": null,
+   "ref_release_date": "2026-09-16"
+  },
+  {
+   "episode": "«Бэтмен: Падение рыцаря. Часть первая»: говорим о мультфильме, основанном на комиксной арке Knightfall начала 1990-х",
+   "short": "Бэтмен: Падение рыцаря. Часть первая",
+   "format": "Новый",
+   "genre": "Мультфильм",
+   "duration": "00:34:10",
+   "category": "Супергероика",
+   "release_date": null,
+   "ref_release_date": "2026-09-18"
   }
  ],
  "formats": [
@@ -1814,9 +1844,9 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-09-11",
- "record_count": 20691,
- "episode_count": 180,
+ "date_max": "2026-09-14",
+ "record_count": 20826,
+ "episode_count": 183,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1831,6 +1861,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-09-13T19:38:24",
+ "generated_at": "2026-09-15T19:30:47",
  "version": 1
 }
