@@ -43,7 +43,7 @@ export default function BubbleChart({
   refX,
   refY,
   height = 420,
-  colorLabel = "RSI",
+  colorLabel = "ИУВ",
 }: Props) {
   const colorVals = data.map((d) => d[colorKey] as number);
   const cMin = Math.min(...colorVals);

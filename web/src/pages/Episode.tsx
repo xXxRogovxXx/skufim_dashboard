@@ -8,13 +8,14 @@ import {
   funnelData,
   episodePosition,
   sum,
-  mean,
 } from "../lib/agg";
 import type { Record as Rec } from "../lib/data";
 import { COLORS } from "../theme/tokens";
 import { formatNumber, formatPercent, formatDecimal, formatDateRu, safeDiv } from "../lib/format";
+import { buildIuvMap, meanIuv, iuvBand } from "../lib/iuv";
 import GlassCard from "../components/GlassCard";
 import { SectionTitle, Hint } from "../components/SectionTitle";
+import IuvNote from "../components/IuvNote";
 import { KpiRow } from "../components/KpiRow";
 import TimeChart from "../components/charts/TimeChart";
 import FunnelView from "../components/charts/FunnelView";
@@ -30,6 +31,12 @@ export default function Episode({ data }: { data: Dataset }) {
   const epMeta = meta.episodes.find((e) => e.episode === episode) ?? meta.episodes[0];
   const days = PERIODS[periodIdx].days;
   const release = epMeta.release_date!;
+
+  // ИУВ — успешность выпуска (окно «первые 10 дней»), из полных данных.
+  const iuvMap = useMemo(() => buildIuvMap(records, meta), [records, meta]);
+  const iuvInfo = iuvMap.get(episode);
+  const iuvVal = iuvInfo?.iuv ?? 0;
+  const iuvMean = useMemo(() => meanIuv(iuvMap, iuvMap.keys()), [iuvMap]);
 
   const allData = useMemo(() => records.filter((r) => r.episode === episode), [records, episode]);
   const epData = useMemo(() => filterPeriod(allData, release, days), [allData, release, days]);
@@ -49,7 +56,6 @@ export default function Episode({ data }: { data: Dataset }) {
   const starts = sum(col(epData, "starts"));
   const streams = sum(col(epData, "streams"));
   const conv = safeDiv(streams, starts) * 100;
-  const rsi = mean(col(epData, "rsi"));
   const listeners = sum(col(epData, "listeners"));
   const hours = sum(col(epData, "hours"));
 
@@ -87,17 +93,27 @@ export default function Episode({ data }: { data: Dataset }) {
   const posMetrics: { key: keyof Rec; label: string }[] = [
     { key: "starts", label: "Старты" },
     { key: "streams", label: "Стримы" },
-    { key: "rsi", label: "RSI" },
     { key: "listeners", label: "Слушатели" },
     { key: "hours", label: "Часы" },
   ];
-  const positions = posMetrics.map((m) => ({ label: m.label, ...episodePosition(epData, compareData, m.key) }));
+  // ИУВ считается на фиксированном окне (не по-дневная метрика), поэтому его
+  // позицию относительно среднего строим отдельно, а не через episodePosition.
+  const iuvStatus = (() => {
+    if (iuvVal > iuvMean * 1.1) return ["🔼 Значительно выше среднего", "#22C55E"];
+    if (iuvVal > iuvMean) return ["🔼 Выше среднего", "#7C3AED"];
+    if (iuvVal > iuvMean * 0.9) return ["➖ На уровне среднего", "#F59E0B"];
+    return ["🔽 Ниже среднего", "#EF4444"];
+  })();
+  const positions = [
+    { label: "ИУВ", value: iuvVal, mean: iuvMean, status: iuvStatus[0], color: iuvStatus[1] },
+    ...posMetrics.map((m) => ({ label: m.label, ...episodePosition(epData, compareData, m.key) })),
+  ];
 
   const kpiItems = [
     { icon: "🎬", value: formatNumber(starts), label: "Старты" },
     { icon: "🎧", value: formatNumber(streams), label: "Стримы" },
     { icon: "📈", value: formatPercent(conv), label: "Конверсия" },
-    { icon: "⭐", value: formatDecimal(rsi), label: "RSI" },
+    { icon: "⭐", value: formatDecimal(iuvVal, 0), label: `ИУВ · ${iuvBand(iuvVal)}` },
     { icon: "👥", value: formatNumber(listeners), label: "Слушатели" },
     { icon: "⏱", value: formatDecimal(hours), label: "Часы" },
   ];
@@ -129,6 +145,7 @@ export default function Episode({ data }: { data: Dataset }) {
 
       <GlassCard>
         <SectionTitle>📊 Сравнение со средними показателями</SectionTitle>
+        <IuvNote />
         <div className="table-wrap">
           <table className="data">
             <thead><tr><th>Метрика</th><th>Значение</th><th>Среднее</th><th>Статус</th></tr></thead>

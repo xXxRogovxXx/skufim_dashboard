@@ -13,9 +13,11 @@ import {
   type Filters,
 } from "../lib/agg";
 import { COLORS, SERIES_PALETTE, WEEKDAY_LABELS } from "../theme/tokens";
+import { buildIuvMap, iuvColor } from "../lib/iuv";
 import { formatNumber, formatPercent, formatDecimal, safeDiv } from "../lib/format";
 import GlassCard from "../components/GlassCard";
 import { SectionTitle, Hint } from "../components/SectionTitle";
+import IuvNote from "../components/IuvNote";
 import { KpiRow } from "../components/KpiRow";
 import TimeChart from "../components/charts/TimeChart";
 import CategoryBar from "../components/charts/CategoryBar";
@@ -45,10 +47,14 @@ export default function Overview({ data }: { data: Dataset }) {
   const filters: Filters = { dateFrom, dateTo, format, genre };
   const filtered = useMemo(() => applyFilters(records, filters), [records, dateFrom, dateTo, format, genre]);
 
-  const kpis = useMemo(() => computeKpis(filtered), [filtered]);
+  // ИУВ — свойство выпуска (окно «первые 10 дней»), считается из ПОЛНЫХ данных
+  // один раз и не зависит от выбранного периода.
+  const iuvMap = useMemo(() => buildIuvMap(records, meta), [records, meta]);
+
+  const kpis = useMemo(() => computeKpis(filtered, iuvMap), [filtered, iuvMap]);
   const daily = useMemo(() => dailySeries(filtered), [filtered]);
   const weekday = useMemo(() => weekdaySeries(filtered), [filtered]);
-  const epAgg = useMemo(() => episodeAggregates(filtered), [filtered]);
+  const epAgg = useMemo(() => episodeAggregates(filtered, iuvMap), [filtered, iuvMap]);
   const genres = useMemo(() => genreAggregates(filtered), [filtered]);
   const pareto = useMemo(() => paretoByHours(filtered), [filtered]);
 
@@ -65,7 +71,7 @@ export default function Overview({ data }: { data: Dataset }) {
     .map((e) => ({ ...e, eff: safeDiv(e.hours, e.listeners) }))
     .sort((a, b) => b.eff - a.eff)
     .slice(0, 10);
-  const topRsi = [...epAgg].sort((a, b) => b.rsi - a.rsi);
+  const topIuv = [...epAgg].sort((a, b) => b.iuv - a.iuv);
   const hall = matrix;
   const hallFame = [...hall].sort((a, b) => b.completion - a.completion).slice(0, 5);
   const dangerZone = [...hall].sort((a, b) => a.completion - b.completion).slice(0, 5);
@@ -79,14 +85,14 @@ export default function Overview({ data }: { data: Dataset }) {
 
   const summary = [...epAgg]
     .map((e) => ({ ...e, hpl: safeDiv(e.hours, e.listeners), spl: safeDiv(e.starts, e.listeners) }))
-    .sort((a, b) => b.rsi - a.rsi);
+    .sort((a, b) => b.iuv - a.iuv);
 
   const kpiItems = [
     { icon: "🎬", value: formatNumber(kpis.totalStarts), label: "Всего стартов" },
     { icon: "🎧", value: formatNumber(kpis.totalStreams), label: "Всего стримов" },
     { icon: "📈", value: formatPercent(kpis.conversion), label: "Конверсия" },
     { icon: "📝", value: formatNumber(kpis.uniqueEpisodes), label: "Выпусков" },
-    { icon: "⭐", value: formatDecimal(kpis.avgRsi), label: "Средний RSI" },
+    { icon: "⭐", value: formatDecimal(kpis.avgIuv, 0), label: "Средний ИУВ" },
     { icon: "🎯", value: formatPercent(kpis.avgListen), label: "Средний %" },
     { icon: "👥", value: formatNumber(kpis.totalListeners), label: "Слушатели" },
     { icon: "⏱", value: formatDecimal(kpis.totalHours), label: "Часы" },
@@ -177,10 +183,11 @@ export default function Overview({ data }: { data: Dataset }) {
         <Section id="quality_matrix">
           <BubbleChart
             data={matrix}
-            xKey="starts" yKey="y" sizeKey="size" colorKey="rsi" labelKey="short"
+            xKey="starts" yKey="y" sizeKey="size" colorKey="iuv" labelKey="short"
             xLabel="Старты (популярность)" yLabel="Дослушиваемость (качество)"
-            xLog refX={medStarts} refY={medY} colorLabel="RSI"
+            xLog refX={medStarts} refY={medY} colorLabel="ИУВ"
           />
+          <IuvNote />
         </Section>
       )}
 
@@ -188,8 +195,8 @@ export default function Overview({ data }: { data: Dataset }) {
         <Section id="audience_scatter">
           <BubbleChart
             data={audience}
-            xKey="listeners" yKey="hours" sizeKey="completion" colorKey="rsi" labelKey="short"
-            xLabel="Слушатели" yLabel="Часы" xLog colorLabel="RSI"
+            xKey="listeners" yKey="hours" sizeKey="completion" colorKey="iuv" labelKey="short"
+            xLabel="Слушатели" yLabel="Часы" xLog colorLabel="ИУВ"
           />
         </Section>
       )}
@@ -234,7 +241,7 @@ export default function Overview({ data }: { data: Dataset }) {
                   <span className="rank-name">{medals[i]} {e.short}</span>
                   <span style={{ color: COLORS.success, fontWeight: 600 }}>
                     {formatPercent(e.completion * 100)}
-                    <span style={{ color: "#71717a", fontSize: "0.7rem", marginLeft: 6 }}>RSI {formatDecimal(e.rsi)}</span>
+                    <span style={{ color: "#71717a", fontSize: "0.7rem", marginLeft: 6 }}>ИУВ {formatDecimal(e.iuv, 0)}</span>
                   </span>
                 </div>
               ))}
@@ -246,7 +253,7 @@ export default function Overview({ data }: { data: Dataset }) {
                   <span className="rank-name">{i < 3 ? "⚠️" : "📌"} {e.short}</span>
                   <span style={{ color: COLORS.danger, fontWeight: 600 }}>
                     {formatPercent(e.completion * 100)}
-                    <span style={{ color: "#71717a", fontSize: "0.7rem", marginLeft: 6 }}>RSI {formatDecimal(e.rsi)}</span>
+                    <span style={{ color: "#71717a", fontSize: "0.7rem", marginLeft: 6 }}>ИУВ {formatDecimal(e.iuv, 0)}</span>
                   </span>
                 </div>
               ))}
@@ -256,15 +263,16 @@ export default function Overview({ data }: { data: Dataset }) {
       )}
 
       <Section id="top_rsi">
+        <IuvNote />
         <div className="grid-2">
-          <CategoryBar data={topRsi.slice(0, 10)} labelKey="short" valueKey="rsi" gradientByValue
-            height={340} valueFormatter={(v) => formatDecimal(v, 1)} />
+          <CategoryBar data={topIuv.slice(0, 10)} labelKey="short" valueKey="iuv" gradientByValue
+            height={340} valueFormatter={(v) => formatDecimal(v, 0)} />
           <div>
-            <div className="sidebar__section">⭐ Топ RSI</div>
-            {topRsi.slice(0, 5).map((e, i) => (
+            <div className="sidebar__section">⭐ Топ ИУВ</div>
+            {topIuv.slice(0, 5).map((e, i) => (
               <div key={e.episode} className="rank-item">
                 <span className="rank-name">{medals[i]} {e.short}</span>
-                <span style={{ color: COLORS.accent, fontWeight: 600 }}>{formatDecimal(e.rsi)}</span>
+                <span style={{ color: iuvColor(e.iuv), fontWeight: 600 }}>{formatDecimal(e.iuv, 0)}</span>
               </div>
             ))}
           </div>
@@ -308,12 +316,13 @@ export default function Overview({ data }: { data: Dataset }) {
       </Section>
 
       <Section id="summary">
+        <IuvNote />
         <div className="table-wrap">
           <table className="data">
             <thead>
               <tr>
-                <th>Название</th><th>Старты</th><th>Стримы</th><th>Конв. %</th>
-                <th>Дослуш. %</th><th>Средний %</th><th>RSI</th>
+                <th>Название</th><th>ИУВ</th><th>Старты</th><th>Стримы</th><th>Конв. %</th>
+                <th>Дослуш. %</th><th>Средний %</th>
                 <th>Слуш.</th><th>Часы</th><th>Часы/сл.</th><th>Формат</th><th>Жанр</th>
               </tr>
             </thead>
@@ -321,12 +330,12 @@ export default function Overview({ data }: { data: Dataset }) {
               {summary.slice(0, 50).map((e) => (
                 <tr key={e.episode}>
                   <td>{e.short}</td>
+                  <td style={{ color: iuvColor(e.iuv), fontWeight: 700 }}>{formatDecimal(e.iuv, 0)}</td>
                   <td>{formatNumber(e.starts)}</td>
                   <td>{formatNumber(e.streams)}</td>
                   <td>{formatDecimal(e.conversion, 1)}</td>
                   <td>{formatDecimal(e.completion * 100, 1)}</td>
                   <td>{formatDecimal(e.avg * 100, 1)}</td>
-                  <td style={{ color: COLORS.accentSoft }}>{formatDecimal(e.rsi, 1)}</td>
                   <td>{formatNumber(e.listeners)}</td>
                   <td>{formatDecimal(e.hours, 1)}</td>
                   <td>{formatDecimal(e.hpl, 2)}</td>

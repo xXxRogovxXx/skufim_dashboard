@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import type { Dataset, Record as Rec } from "../lib/data";
 import { PERIODS } from "../config/sections";
-import { filterPeriod, lifeCurve, daysToPercent, funnelData, sum, mean, groupBy } from "../lib/agg";
+import { filterPeriod, lifeCurve, daysToPercent, funnelData, sum, groupBy } from "../lib/agg";
 import { COLORS } from "../theme/tokens";
+import { buildIuvMap, iuvColor, iuvBand } from "../lib/iuv";
 import { formatNumber, formatPercent, formatDecimal, safeDiv } from "../lib/format";
 import GlassCard from "../components/GlassCard";
 import { SectionTitle, Hint } from "../components/SectionTitle";
+import IuvNote from "../components/IuvNote";
 import { KpiRow } from "../components/KpiRow";
 import TimeChart from "../components/charts/TimeChart";
 import FunnelView from "../components/charts/FunnelView";
@@ -81,13 +83,17 @@ export default function Compare({ data }: { data: Dataset }) {
     return <div>{controls}<GlassCard hover={false}>Нет данных для выбранных выпусков в этом периоде.</GlassCard></div>;
   }
 
+  // ИУВ — свойство выпуска (окно «первые 10 дней»), из полных данных.
+  const iuvMap = useMemo(() => buildIuvMap(records, meta), [records, meta]);
+  const iuv1 = iuvMap.get(ep1)?.iuv ?? 0;
+  const iuv2 = iuvMap.get(ep2)?.iuv ?? 0;
+
   const stat = (rows: Rec[]) => {
     const starts = sum(col(rows, "starts"));
     const streams = sum(col(rows, "streams"));
     return {
       starts, streams,
       conv: safeDiv(streams, starts) * 100,
-      rsi: mean(col(rows, "rsi")),
       listeners: sum(col(rows, "listeners")),
       hours: sum(col(rows, "hours")),
     };
@@ -95,11 +101,11 @@ export default function Compare({ data }: { data: Dataset }) {
   const s1 = stat(data1);
   const s2 = stat(data2);
 
-  const kpi = (s: ReturnType<typeof stat>) => [
+  const kpi = (s: ReturnType<typeof stat>, iuv: number) => [
     { icon: "🎬", value: formatNumber(s.starts), label: "Старты" },
     { icon: "🎧", value: formatNumber(s.streams), label: "Стримы" },
     { icon: "📈", value: formatPercent(s.conv), label: "Конверсия" },
-    { icon: "⭐", value: formatDecimal(s.rsi), label: "RSI" },
+    { icon: "⭐", value: formatDecimal(iuv, 0), label: `ИУВ · ${iuvBand(iuv)}` },
     { icon: "👥", value: formatNumber(s.listeners), label: "Слушатели" },
     { icon: "⏱", value: formatDecimal(s.hours), label: "Часы" },
   ];
@@ -132,11 +138,11 @@ export default function Compare({ data }: { data: Dataset }) {
   const f1 = funnelData(data1);
   const f2 = funnelData(data2);
 
-  const rsiWinner =
-    s1.rsi > s2.rsi * 1.05 ? { name: m1.short, color: COLORS.success, detail: "значительно лучше по RSI" }
-    : s1.rsi > s2.rsi ? { name: m1.short, color: COLORS.starts, detail: "лучше по RSI" }
-    : s2.rsi > s1.rsi * 1.05 ? { name: m2.short, color: COLORS.success, detail: "значительно лучше по RSI" }
-    : s2.rsi > s1.rsi ? { name: m2.short, color: COLORS.streams, detail: "лучше по RSI" }
+  const iuvWinner =
+    iuv1 > iuv2 * 1.05 ? { name: m1.short, color: COLORS.success, detail: "значительно успешнее по ИУВ" }
+    : iuv1 > iuv2 ? { name: m1.short, color: COLORS.starts, detail: "успешнее по ИУВ" }
+    : iuv2 > iuv1 * 1.05 ? { name: m2.short, color: COLORS.success, detail: "значительно успешнее по ИУВ" }
+    : iuv2 > iuv1 ? { name: m2.short, color: COLORS.streams, detail: "успешнее по ИУВ" }
     : { name: "Ничья", color: COLORS.warning, detail: "выпуски примерно равны" };
 
   const cmp = (a: number | null, b: number | null, lower: boolean) => {
@@ -152,11 +158,11 @@ export default function Compare({ data }: { data: Dataset }) {
       <div className="grid-2">
         <GlassCard hover={false}>
           <div style={{ color: COLORS.starts, textAlign: "center", fontWeight: 600, marginBottom: 10 }}>{m1.short}</div>
-          <KpiRow items={kpi(s1)} />
+          <KpiRow items={kpi(s1, iuv1)} />
         </GlassCard>
         <GlassCard hover={false}>
           <div style={{ color: COLORS.streams, textAlign: "center", fontWeight: 600, marginBottom: 10 }}>{m2.short}</div>
-          <KpiRow items={kpi(s2)} />
+          <KpiRow items={kpi(s2, iuv2)} />
         </GlassCard>
       </div>
 
@@ -257,20 +263,23 @@ export default function Compare({ data }: { data: Dataset }) {
       )}
 
       <GlassCard>
-        <SectionTitle>🏆 Итоговый вердикт по RSI</SectionTitle>
+        <SectionTitle>🏆 Итоговый вердикт по ИУВ</SectionTitle>
+        <IuvNote />
         <div className="grid-3">
           <div className="verdict">
-            <div className="title" style={{ color: COLORS.starts }}>⭐ RSI {m1.short}</div>
-            <div className="value">{formatDecimal(s1.rsi)}</div>
+            <div className="title" style={{ color: COLORS.starts }}>⭐ ИУВ {m1.short}</div>
+            <div className="value" style={{ color: iuvColor(iuv1) }}>{formatDecimal(iuv1, 0)}</div>
+            <div className="desc">{iuvBand(iuv1)}</div>
           </div>
           <div className="verdict">
-            <div className="title" style={{ color: COLORS.streams }}>⭐ RSI {m2.short}</div>
-            <div className="value">{formatDecimal(s2.rsi)}</div>
+            <div className="title" style={{ color: COLORS.streams }}>⭐ ИУВ {m2.short}</div>
+            <div className="value" style={{ color: iuvColor(iuv2) }}>{formatDecimal(iuv2, 0)}</div>
+            <div className="desc">{iuvBand(iuv2)}</div>
           </div>
-          <div className="verdict" style={{ borderColor: rsiWinner.color + "66" }}>
-            <div className="title" style={{ color: rsiWinner.color }}>🏆 Победитель</div>
-            <div className="value" style={{ color: rsiWinner.color, fontSize: "1.1rem" }}>{rsiWinner.name}</div>
-            <div className="desc">{rsiWinner.detail}</div>
+          <div className="verdict" style={{ borderColor: iuvWinner.color + "66" }}>
+            <div className="title" style={{ color: iuvWinner.color }}>🏆 Победитель</div>
+            <div className="value" style={{ color: iuvWinner.color, fontSize: "1.1rem" }}>{iuvWinner.name}</div>
+            <div className="desc">{iuvWinner.detail}</div>
           </div>
         </div>
       </GlassCard>

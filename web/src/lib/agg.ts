@@ -53,7 +53,7 @@ export interface Kpis {
   totalStreams: number;
   conversion: number;
   uniqueEpisodes: number;
-  avgRsi: number;
+  avgIuv: number;
   avgListen: number; // *100
   totalListeners: number;
   totalHours: number;
@@ -61,17 +61,23 @@ export interface Kpis {
   startsPerListener: number;
 }
 
-export function computeKpis(rows: Record[]): Kpis {
+export function computeKpis(
+  rows: Record[],
+  iuvMap?: Map<string, { iuv: number }>
+): Kpis {
   const totalStarts = sum(col(rows, "starts"));
   const totalStreams = sum(col(rows, "streams"));
   const totalListeners = sum(col(rows, "listeners"));
   const totalHours = sum(col(rows, "hours"));
+  const eps = new Set(rows.map((r) => r.episode));
+  let iuvSum = 0, iuvN = 0;
+  if (iuvMap) for (const e of eps) { const i = iuvMap.get(e); if (i) { iuvSum += i.iuv; iuvN++; } }
   return {
     totalStarts,
     totalStreams,
     conversion: safeDiv(totalStreams, totalStarts) * 100,
-    uniqueEpisodes: new Set(rows.map((r) => r.episode)).size,
-    avgRsi: mean(col(rows, "rsi")),
+    uniqueEpisodes: eps.size,
+    avgIuv: iuvN ? iuvSum / iuvN : 0,
     avgListen: mean(col(rows, "avg")) * 100,
     totalListeners,
     totalHours,
@@ -137,7 +143,7 @@ export interface EpisodeAgg {
   streams: number;
   avg: number; // mean
   completion: number; // mean
-  rsi: number; // mean
+  iuv: number; // индекс успешности выпуска (свойство выпуска, не зависит от фильтра)
   listeners: number;
   hours: number;
   conversion: number;
@@ -145,7 +151,13 @@ export interface EpisodeAgg {
   genre: string | null;
 }
 
-export function episodeAggregates(rows: Record[]): EpisodeAgg[] {
+// iuvMap — карта выпуск→ИУВ (см. lib/iuv.ts). Считается из полных данных и
+// передаётся сюда, т.к. ИУВ измеряется на окне «первые 10 дней», а не усредняется
+// по строкам выбранного периода.
+export function episodeAggregates(
+  rows: Record[],
+  iuvMap?: Map<string, { iuv: number }>
+): EpisodeAgg[] {
   const g = groupBy(rows, (r) => r.episode);
   const out: EpisodeAgg[] = [];
   for (const [episode, rs] of g) {
@@ -158,7 +170,7 @@ export function episodeAggregates(rows: Record[]): EpisodeAgg[] {
       streams,
       avg: mean(col(rs, "avg")),
       completion: mean(col(rs, "completion")),
-      rsi: mean(col(rs, "rsi")),
+      iuv: iuvMap?.get(episode)?.iuv ?? 0,
       listeners: sum(col(rs, "listeners")),
       hours: sum(col(rs, "hours")),
       conversion: safeDiv(streams, starts) * 100,
