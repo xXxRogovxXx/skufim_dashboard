@@ -1827,8 +1827,38 @@
    "genre": "Мультфильм",
    "duration": "00:34:10",
    "category": "Супергероика",
-   "release_date": null,
+   "release_date": "2026-09-19",
    "ref_release_date": "2026-09-18"
+  },
+  {
+   "episode": "Marvel’s Wolverine: супергеройский боевик от Insomniac Games — обсуждаем новый эксклюзив PS5",
+   "short": "Wolverine",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:55:13",
+   "category": "Супергероика",
+   "release_date": null,
+   "ref_release_date": "2026-09-21"
+  },
+  {
+   "episode": "«Укрытие» 3 сезон: спорное продолжение сериала-антиутопии от Apple TV+",
+   "short": "Silo S3",
+   "format": "Новый",
+   "genre": "Сериал",
+   "duration": "00:35:37",
+   "category": "Фантастика",
+   "release_date": null,
+   "ref_release_date": "2026-09-23"
+  },
+  {
+   "episode": "Resonance: A Plague Tale Legacy. Разбор приквела о приключениях Софии.",
+   "short": "Resonance: A Plague Tale",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:30:21",
+   "category": "Приключение",
+   "release_date": null,
+   "ref_release_date": "2026-09-25"
   }
  ],
  "formats": [
@@ -1844,9 +1874,9 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-09-16",
- "record_count": 20910,
- "episode_count": 183,
+ "date_max": "2026-09-21",
+ "record_count": 21115,
+ "episode_count": 186,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1861,6 +1891,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-09-17T21:34:38",
+ "generated_at": "2026-09-23T00:23:00",
  "version": 1
 }
