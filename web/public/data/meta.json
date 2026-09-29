@@ -1857,8 +1857,28 @@
    "genre": "Игра",
    "duration": "00:30:21",
    "category": "Приключение",
-   "release_date": null,
+   "release_date": "2026-09-26",
    "ref_release_date": "2026-09-25"
+  },
+  {
+   "episode": "На краю Оук-стрит: каким получилась экшен-фантастика в духе 80-х с Энн Хэтэуэй и Юэном Макгрегором",
+   "short": "На краю Оук-стрит",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:24:01",
+   "category": "Фантастика",
+   "release_date": null,
+   "ref_release_date": "2026-09-28"
+  },
+  {
+   "episode": "Микс впечатлений: Assassin’s Creed Black Flag Resynced, «Очень странные дела: Байки из 85» 2 сезон, сериал «Нили», Ori and the Blind Forest - кто что смотрел и во что играл",
+   "short": "Микс впечатлений",
+   "format": "Новый",
+   "genre": "Сводный",
+   "duration": "01:03:07",
+   "category": "Спецвыпуск",
+   "release_date": null,
+   "ref_release_date": "2026-09-30"
   }
  ],
  "formats": [
@@ -1874,9 +1894,9 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-09-25",
- "record_count": 21254,
- "episode_count": 186,
+ "date_max": "2026-09-28",
+ "record_count": 21405,
+ "episode_count": 188,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1891,6 +1911,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-09-27T11:06:44",
+ "generated_at": "2026-09-29T20:02:11",
  "version": 1
 }
