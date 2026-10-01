@@ -1867,7 +1867,7 @@
    "genre": "Фильм",
    "duration": "00:24:01",
    "category": "Фантастика",
-   "release_date": null,
+   "release_date": "2026-09-29",
    "ref_release_date": "2026-09-28"
   },
   {
@@ -1877,7 +1877,7 @@
    "genre": "Сводный",
    "duration": "01:03:07",
    "category": "Спецвыпуск",
-   "release_date": null,
+   "release_date": "2026-09-30",
    "ref_release_date": "2026-09-30"
   }
  ],
@@ -1894,8 +1894,8 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-09-28",
- "record_count": 21405,
+ "date_max": "2026-09-30",
+ "record_count": 21483,
  "episode_count": 188,
  "important_dates": [
   {
@@ -1911,6 +1911,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-09-29T20:02:11",
+ "generated_at": "2026-10-01T20:31:41",
  "version": 1
 }
