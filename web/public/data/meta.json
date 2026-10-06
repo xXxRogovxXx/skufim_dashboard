@@ -1879,6 +1879,26 @@
    "category": "Спецвыпуск",
    "release_date": "2026-09-30",
    "ref_release_date": "2026-09-30"
+  },
+  {
+   "episode": "«Обитель зла»: обсуждаем новую адаптацию знаменитой серии видеоигр от режиссера «Орудий»",
+   "short": "Обитель зла",
+   "format": "Новый",
+   "genre": "Фильм",
+   "duration": "00:34:34",
+   "category": "Ужасы",
+   "release_date": null,
+   "ref_release_date": "2026-10-05"
+  },
+  {
+   "episode": "Gears of War 2: взгляд из 2026-го на лучшую игру серии",
+   "short": "Gears of War 2",
+   "format": "Новый",
+   "genre": "Игра",
+   "duration": "00:20:29",
+   "category": "Приключение",
+   "release_date": null,
+   "ref_release_date": "2026-10-07"
   }
  ],
  "formats": [
@@ -1894,9 +1914,9 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-09-30",
- "record_count": 21483,
- "episode_count": 188,
+ "date_max": "2026-10-04",
+ "record_count": 21634,
+ "episode_count": 190,
  "important_dates": [
   {
    "date": "2025-05-19",
@@ -1911,6 +1931,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-10-01T20:31:41",
+ "generated_at": "2026-10-06T20:04:48",
  "version": 1
 }
