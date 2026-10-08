@@ -1887,7 +1887,7 @@
    "genre": "Фильм",
    "duration": "00:34:34",
    "category": "Ужасы",
-   "release_date": null,
+   "release_date": "2026-10-06",
    "ref_release_date": "2026-10-05"
   },
   {
@@ -1914,8 +1914,8 @@
   "Личный"
  ],
  "date_min": "2024-11-13",
- "date_max": "2026-10-04",
- "record_count": 21634,
+ "date_max": "2026-10-06",
+ "record_count": 21700,
  "episode_count": 190,
  "important_dates": [
   {
@@ -1931,6 +1931,6 @@
    "dash": "dot"
   }
  ],
- "generated_at": "2026-10-06T20:04:48",
+ "generated_at": "2026-10-08T22:10:15",
  "version": 1
 }
